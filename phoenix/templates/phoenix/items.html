@@ -1,0 +1,53 @@
+{% extends "phoenix/layout.html" %}
+{% block body %}
+<div id="container">
+Choose the 'Found in Raid' item to find out more
+<select id="quest" onchange="getquestitems()">
+   {% for item in items %}
+<option>{{item}}</option>
+   {% endfor %}
+</select>
+{%for item in itemquest %}
+{{item.tarkovquest}}
+{% endfor %}
+<p id="selected">
+
+</p>
+<p id="result">
+
+</p>
+</div>
+<script>
+document.getElementById("quest").addEventListener("change", getquestitems())
+
+function getquestitems() {
+   console.log("hello")
+   var x=document.getElementById("quest").value;
+   fetch('/itemroute', {
+      method: 'POST',
+      body: JSON.stringify({
+         body: x,
+   })
+})
+   .then(response => response.json())
+   .then(result => {
+      const result2 = JSON.parse(result["message"])
+
+      document.getElementById('result').innerHTML = result2[0].fields.tarkovquest
+   })
+   document.getElementById("selected").innerHTML = "You selected: " + x;
+}
+</script>
+{% endblock %}
+
+[{ "model": "phoenix.tarkovquest",
+   "pk": 8,
+   "fields": {"name": "Dressed to Kill",
+               "description": "",
+               "objectives": {},
+               "rewards": "",
+               "questgiver": "",
+               "prereqs": {},
+               "leadsto": {}
+             }
+}]
