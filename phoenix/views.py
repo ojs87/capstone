@@ -25,10 +25,20 @@ def items(request):
 def itemroute(request):
     data=json.loads(request.body)
     body=data.get("body", "")
-    item= serialize('json', TarkovItemQuest.objects.filter(tarkovitem=TarkovItem.objects.filter(name=body)[0]))
+    itemquest = TarkovItemQuest.objects.filter(tarkovitem=TarkovItem.objects.get(name=body))
+    # quest = itemquest[0]
+    # quest2 = str(quest.tarkovquest)
+    quest2={}
+    y=0
+    num="numberofitems"
+    for x in itemquest:
+        quest2[y] = {"quest" : str(x.tarkovquest), "num" : str(x.numberofitems)}
+        
+        y=y+1
+    # item= serialize('json', quest)
     # item2 = serialize('json', quest)
     # return JsonResponse({"message" : body, "quest" : quest[0]})
-    return JsonResponse({"message" : item})
+    return JsonResponse(quest2)
 
 def questroute(request):
     pass
