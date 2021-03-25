@@ -6,12 +6,12 @@ class User(AbstractUser):
 
 class TarkovQuest(models.Model):
     name = models.CharField(max_length=128)
-    description = models.TextField(default="")
-    objectives = models.JSONField(default=dict)
-    rewards = models.TextField(default="")
-    questgiver = models.CharField(max_length=128)
-    prereqs = models.JSONField(default=dict)
-    leadsto = models.JSONField(default=dict)
+    description = models.TextField(default="", blank=True)
+    objectives = models.JSONField(default=dict, blank=True)
+    rewards = models.JSONField(default=dict, blank=True)
+    questgiver = models.CharField(max_length=128, blank=True)
+    prereqs = models.JSONField(default=dict, blank=True)
+    leadsto = models.JSONField(default=dict, blank=True)
 
     def __str__(self):
         return self.name
@@ -34,7 +34,7 @@ class TarkovItemQuest(models.Model):
     tarkovitem = models.ForeignKey(TarkovItem, on_delete=models.CASCADE)
     tarkovquest = models.ForeignKey(TarkovQuest, on_delete=models.CASCADE)
     numberofitems = models.IntegerField()
-    foundinraid = models.BooleanField(default=False)
+    foundinraid = models.BooleanField(default=True)
 
 
 class TarkovItemHideout(models.Model):

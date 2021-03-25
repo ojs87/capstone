@@ -3,9 +3,13 @@
 <!DOCTYPE html>
 <html lang='en'>
    <head>
-      <title>{% block title %}Phoenix{% endblock %}</title>
+      <script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+      <script src="{% static 'phoenix/script.js' %}"></script>
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="{% static 'phoenix/styles.css' %}" rel="stylesheet">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="{% static 'phoenix/styles.css' %}" rel="stylesheet">
+       <title>{% block title %}Phoenix{% endblock %}</title>
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,9 +18,63 @@
             <li class="nav-item">
                <a class="nav-link" href={% url "items" %}>Items</a>
             </li>
-            <li class="nav-item">
-               <a class="nav-link">Quests</a>
-            </li>
+            <!-- Level one dropdown -->
+           <li class="nav-item dropdown">
+             <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Quests</a>
+             <ul aria-labelledby="dropdownMenu1" class="dropdown-menu border-0 shadow">
+               <!-- Level two dropdown-->
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Prapor</a>
+                 <ul id="prapordropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+              </li>
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Therapist</a>
+                 <ul id="therapistdropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+              <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Fence</a>
+                 <ul id="fencedropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+              </li>
+              <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Skier</a>
+                 <ul id="skierdropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Peacekeeper</a>
+                 <ul id="peacekeeperdropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Mechanic</a>
+                 <ul id="mechanicdropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Ragman</a>
+                 <ul id="ragmandropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+               <li class="dropdown-submenu">
+                 <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Jaeger</a>
+                 <ul id="jaegerdropdown" aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow">
+
+                 </ul>
+               </li>
+               <!-- End Level two -->
+             </ul>
+           </li>
+           <!-- End Level one -->
             <li class="nav-item">
                <a class="nav-link">Found In Raid</a>
             </li>
