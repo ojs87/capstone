@@ -36,6 +36,7 @@ class TarkovItemQuest(models.Model):
     numberofitems = models.IntegerField()
     foundinraid = models.BooleanField(default=False)
 
+
 class TarkovItemHideout(models.Model):
     tarkovitem = models.ForeignKey(TarkovItem, on_delete=models.CASCADE)
     tarkovhideout = models.ForeignKey(TarkovHideout, on_delete=models.CASCADE)

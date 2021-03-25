@@ -7,35 +7,70 @@ Choose the 'Found in Raid' item to find out more
 <option>{{item}}</option>
    {% endfor %}
 </select>
-{%for item in itemquest %}
-{{item.tarkovquest}}
-{% endfor %}
 <p id="selected">
 
 </p>
 <p id="result">
 
 </p>
+<div id="table">
+<table id="tablejs"
+</table>
+</div>
+<!-- <table id="tablejs">
+   <tbody id="tablejs">
+   <tr>
+   <th>Quest</th>
+   <th>Number of Items</th>
+   </tr>
+   <tr>
+   <td id="quest"></td>
+   <td id="num"></td>
+   </tr>
+   </tbody>
+</table> -->
 </div>
 <script>
 document.getElementById("quest").addEventListener("change", getquestitems())
 
 function getquestitems() {
-   console.log("hello")
+   const table = document.createElement("table")
+   table.setAttribute("id", "tablejs")
+   const tableheading = document.createElement("th")
+   const tableheading2 = document.createElement("th")
+   const tablerow = document.createElement("tr")
+   tablerow.setAttribute("id", "tablerowjs")
    var x=document.getElementById("quest").value;
    fetch('/itemroute', {
       method: 'POST',
       body: JSON.stringify({
          body: x,
+      })
    })
-})
    .then(response => response.json())
    .then(result => {
-      const result2 = JSON.parse(result["message"])
-
-      document.getElementById('result').innerHTML = result2[0].fields.tarkovquest
+      // const result2 = JSON.parse(result["message"])
+      var y = 0
+      var result2 = ""
+      document.getElementById("tablejs").remove()
+      document.getElementById("table").appendChild(table)
+      document.getElementById("tablejs").appendChild(tablerow)
+      document.getElementById("tablerowjs").appendChild(tableheading).innerHTML = "Quest"
+      document.getElementById("tablerowjs").appendChild(tableheading2).innerHTML = "Number of Items"
+      for (y in result){
+         tablerowinside = document.createElement("tr")
+         tablerowinside.setAttribute("id", "tablerowjs" + y )
+         document.getElementById("tablejs").appendChild(tablerowinside)
+         var tablecell = document.createElement("td")
+         tablecell.innerHTML = result[y].quest
+         document.getElementById("tablerowjs" + y).appendChild(tablecell)
+         var tablecell2 = document.createElement("td")
+         tablecell2.innerHTML = result[y].num
+         document.getElementById("tablerowjs" + y).appendChild(tablecell2)
+      }
    })
    document.getElementById("selected").innerHTML = "You selected: " + x;
+
 }
 </script>
 {% endblock %}
@@ -43,7 +78,7 @@ function getquestitems() {
 [{ "model": "phoenix.tarkovquest",
    "pk": 8,
    "fields": {"name": "Dressed to Kill",
-               "description": "",
+              "description": "",
                "objectives": {},
                "rewards": "",
                "questgiver": "",
