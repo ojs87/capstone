@@ -136,7 +136,7 @@ $(function() {
   // ------------------------------------------------------- //
   // Multi Level dropdowns
   // ------------------------------------------------------ //
-  $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function(event) {
+  $("ul.dropdown-menu [data-toggle='dropdown']").on("mouseover", function(event) {
     event.preventDefault();
     event.stopPropagation();
     if (!$(this).next().hasClass('show')) {
