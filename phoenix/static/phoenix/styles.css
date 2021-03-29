@@ -23,4 +23,13 @@ table {
   left: 100%;
   margin-top: 0px;
   margin-left: 0px;
+  columns: 2;
+}
+
+#linebreak {
+   white-space:pre-line;
+}
+
+#container {
+   padding:10px;
 }

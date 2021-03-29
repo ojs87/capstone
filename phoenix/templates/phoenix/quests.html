@@ -1,31 +1,46 @@
 {% extends 'phoenix/layout.html' %}
 {% block body %}
-<h3>Quest Name</h3>
-<p>{{quest.name}}</p>
-<h3>Quest Giver</h3>
-<p>{{quest.questgiver}}</p>
-<h3>Objectives</h3>
-{% for x in quest.objectives %}
-<p>{{x.objectives}}</p>
-{% empty %}
-<p>None</p>
-{% endfor %}
-<h3>Prereqs</h3>
-{% for x in quest.prereqs %}
-<p><a href="{{x.prereqs}}">{{x.prereqs}}</a></p>
-{% empty %}
-<p>None</p>
-{% endfor %}
-<h3>Leads to</h3>
-{% for x in quest.leadsto %}
-<p><a href="{{x.leadsto}}">{{x.leadsto}}</a></p>
-{% empty %}
-<p>None</p>
-{% endfor %}
-<h3>Rewards</h3>
-{% for x in quest.rewards %}
-<p>{{x.rewards}}</p>
-{% empty %}
-<p>None</p>
-{% endfor %}
+<div id="container">
+   <h3>Quest Name</h3>
+   <p>{{quest.name}}</p>
+
+   <h3>Quest Giver</h3>
+   <p>{{quest.questgiver}}</p>
+
+   <h3>Objectives</h3>
+   <ul>
+      {% for x in quest.objectives %}
+         <li id="linebreak">{{x.objectives}}</li>
+      {% empty %}
+         <li>None</li>
+      {% endfor %}
+   </ul>
+
+   <h3>Prereqs</h3>
+   <ul>
+   {% for x in quest.prereqs %}
+      <li><a href="{{x.prereqs}}">{{x.prereqs}}</a></li>
+   {% empty %}
+      <li>None</li>
+   {% endfor %}
+   </ul>
+
+   <h3>Leads to</h3>
+   <ul>
+   {% for x in quest.leadsto %}
+      <li><a href="{{x.leadsto}}">{{x.leadsto}}</a></li>
+      {% empty %}
+      <li>None</li>
+   {% endfor %}
+   </ul>
+
+   <h3>Rewards</h3>
+   <ul>
+      {% for x in quest.rewards %}
+         <li id="linebreak">{{x.rewards |safe}}</li>
+      {% empty %}
+         <li>None</li>
+      {% endfor %}
+   </ul>
+</div>
 {% endblock %}
