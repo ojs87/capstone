@@ -1,7 +1,7 @@
-import json
+import json, csv
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import TarkovItem, TarkovQuest, TarkovItemQuest
+from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
@@ -41,15 +41,15 @@ def itemroute(request):
     return JsonResponse(quest2)
 
 def questroute(request):
-    quests= TarkovQuest.objects.all()
-    prapor=quests.filter(questgiver='Prapor')
-    therapist=quests.filter(questgiver='Therapist')
-    fence=quests.filter(questgiver='Fence')
-    skier=quests.filter(questgiver='Skier')
-    peacekeeper=quests.filter(questgiver='Peacekeeper')
-    mechanic=quests.filter(questgiver='Mechanic')
-    ragman=quests.filter(questgiver='Ragman')
-    jaeger=quests.filter(questgiver='Jaeger')
+    quests= TarkovQuestTester.objects.all()
+    prapor=quests.filter(questgiver='Prapor').order_by("name")
+    therapist=quests.filter(questgiver='Therapist').order_by("name")
+    fence=quests.filter(questgiver='Fence').order_by("name")
+    skier=quests.filter(questgiver='Skier').order_by("name")
+    peacekeeper=quests.filter(questgiver='Peacekeeper').order_by("name")
+    mechanic=quests.filter(questgiver='Mechanic').order_by("name")
+    ragman=quests.filter(questgiver='Ragman').order_by("name")
+    jaeger=quests.filter(questgiver='Jaeger').order_by("name")
     jaegerjson = {}
     praporjson = {}
     therapistjson = {}
@@ -112,5 +112,13 @@ def questroute(request):
     return JsonResponse(questjson)
 
 def quests(request, quest):
-    return render(request, 'phoenix/index.html',{
+    return render(request, 'phoenix/quests.html',{
+        "quest" : TarkovQuestTester.objects.get(name=quest)
     })
+
+def importjson():
+    with open('phoenix/csvjson(1).json', encoding='utf-8') as data_file:
+        json_data = json.loads(data_file.read())
+
+        for quest_data in json_data:
+            movie = TarkovQuestTester.create(**quest_data)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TarkovItem, TarkovQuest, TarkovItemQuest, User, TarkovHideout, TarkovItemHideout
+from .models import TarkovItem, TarkovQuest, TarkovItemQuest, User, TarkovHideout, TarkovItemHideout, TarkovQuestTester
 # Register your models here.
 # class TarkovItemAdmin(admin.ModelAdmin):
 #
@@ -19,6 +19,11 @@ class TarkovItemAdmin(admin.ModelAdmin):
     list_display = ("name",)
     ordering = ("name", )
 
+class TarkovQuestTesterAdmin(admin.ModelAdmin):
+    list_display = ("name", "questgiver")
+    ordering = ("questgiver", "name")
+
+admin.site.register(TarkovQuestTester, TarkovQuestTesterAdmin)
 admin.site.register(TarkovItem, TarkovItemAdmin)
 admin.site.register(TarkovQuest, TarkovQuestAdmin)
 admin.site.register(TarkovItemQuest, TarkovItemQuestAdmin)
