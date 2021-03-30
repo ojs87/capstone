@@ -122,7 +122,7 @@ function getquestitems() {
          tablerowinside.setAttribute("id", "tablerowjs" + y )
          document.getElementById("tablejs").appendChild(tablerowinside)
          var tablecell = document.createElement("td")
-         tablecell.innerHTML = result[y].quest
+         tablecell.innerHTML = "<a href='/quests/" + result[y].quest + "'>" + result[y].quest + "</a>"
          document.getElementById("tablerowjs" + y).appendChild(tablecell)
          var tablecell2 = document.createElement("td")
          tablecell2.innerHTML = result[y].num

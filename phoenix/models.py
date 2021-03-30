@@ -69,6 +69,29 @@ class TarkovQuestTester(models.Model):
             leadsto=kwargs['leadsto']
         )
         return quest
-        
+
+    def __str__(self):
+        return self.name
+
+class TarkovFoundInRaid(models.Model):
+    name = models.CharField(max_length=128)
+    canbecrafted = models.CharField(max_length=128)
+    questreward = models.CharField(max_length=128)
+    kappa = models.CharField(max_length=128)
+    amount = models.IntegerField()
+    quest = models.ForeignKey(TarkovQuestTester, on_delete=models.CASCADE)
+
+    @classmethod
+    def create(cls, **kwargs):
+        quest= cls.objects.create(
+            name=kwargs['name'],
+            canbecrafted=kwargs['canbecrafted'],
+            questreward=kwargs['questreward'],
+            kappa=kwargs['kappa'],
+            amount=kwargs['amount'],
+            quest=TarkovQuestTester.objects.get(name=kwargs['quest'])
+        )
+        return quest
+
     def __str__(self):
         return self.name

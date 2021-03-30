@@ -5,9 +5,9 @@
 {% block body %}
 <div id="container">
 Choose the 'Found in Raid' item to find out more
-   <select id="quest" onchange="getquestitems()">
+   <select id="quest" class="form-select" onchange="getquestitems()">
       {% for item in items %}
-      <option>{{item}}</option>
+      <option>{{item.name}}</option>
       {% endfor %}
    </select>
 
