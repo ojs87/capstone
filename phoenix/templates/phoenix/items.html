@@ -1,26 +1,5 @@
-
 {% extends "phoenix/layout.html" %}
 {% load static %}
-
-{% block body %}
-<div id="container">
-Choose the 'Found in Raid' item to find out more
-   <select id="quest" class="form-select" onchange="getquestitems()">
-      {% for item in items %}
-      <option>{{item.name}}</option>
-      {% endfor %}
-   </select>
-
-   <p id="result">
-   </p>
-
-   <div id="table">
-
-      <table id="tablejs">
-
-      </table>
-
-   </div>
-</div>
-<script>document.addEventListener("DOMContentLoaded", getquestitems())</script>
-{% endblock %}
+{%block body%}
+Items not implemented
+{%endblock%}

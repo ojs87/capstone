@@ -11,15 +11,19 @@ def index(request):
     return render(request, 'phoenix/index.html',{
     })
 
-def items(request):
+def foundinraid(request):
     items=TarkovFoundInRaid.objects.all().values('name').distinct().order_by('name')
     quests=TarkovQuest.objects.all()
     itemquest=TarkovItemQuest.objects.all()
-    return render(request, 'phoenix/items.html', {
+    return render(request, 'phoenix/foundinraid.html', {
         "items" : items,
         "quests" : quests,
         "itemquest" : itemquest
     })
+
+def items(request):
+    return render(request, 'phoenix/items.html')
+
 
 @csrf_exempt
 def itemroute2(request):

@@ -26,8 +26,23 @@ table {
    table-layout:fixed
 }
 
+.dropdown-menu {
+   background-color: #242424;
+   color:#ffffff80
+}
+
+.dropdown-item {
+   color:#ffffff80;
+}
+
+.dropdown-item:hover {
+   background-color: #242424;
+   color:#ffffffbf;
+}
+
 .dropdown-submenu {
   position: relative;
+  background-color: #242424;
 }
 
 .dropdown-submenu>a:after {
@@ -42,7 +57,7 @@ table {
   left: 100%;
   margin-top: 0px;
   margin-left: 0px;
-  columns: 2;
+  columns:2;
 }
 
 #linebreak {
