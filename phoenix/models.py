@@ -48,6 +48,7 @@ class TarkovItemHideout(models.Model):
 
 class TarkovQuestTester(models.Model):
     name = models.CharField(max_length=128)
+    slug = models.CharField(max_length=128)
     questhref = models.URLField(blank=True)
     objectives = models.JSONField(default=dict, blank=True)
     rewards = models.JSONField(default=dict, blank=True)

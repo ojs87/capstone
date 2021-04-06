@@ -13,9 +13,9 @@ function getquestnames() {
          var praporli = document.createElement("li")
          var prapora = document.createElement("a")
          praporli.setAttribute("id", "praporli" + y)
-         prapora.innerHTML = result.prapor[y]
+         prapora.innerHTML = result.prapor[y][1]
          prapora.className= "dropdown-item"
-         prapora.setAttribute("href", "/quests/" + result.prapor[y])
+         prapora.setAttribute("href", "/quests/" + result.prapor[y][0])
          document.getElementById("prapordropdown").appendChild(praporli)
          document.getElementById("praporli" + y).appendChild(prapora)
       }
@@ -23,9 +23,9 @@ function getquestnames() {
          var therapistli = document.createElement("li")
          var therapista = document.createElement("a")
          therapistli.setAttribute("id", "therapistli" + y)
-         therapista.innerHTML = result.therapist[y]
+         therapista.innerHTML = result.therapist[y][1]
          therapista.className= "dropdown-item"
-         therapista.setAttribute("href", "/quests/" + result.therapist[y])
+         therapista.setAttribute("href", "/quests/" + result.therapist[y][0])
          document.getElementById("therapistdropdown").appendChild(therapistli)
          document.getElementById("therapistli" + y).appendChild(therapista)
       }
@@ -33,9 +33,9 @@ function getquestnames() {
          var fenceli = document.createElement("li")
          var fencea = document.createElement("a")
          fenceli.setAttribute("id", "fenceli" + y)
-         fencea.innerHTML = result.fence[y]
+         fencea.innerHTML = result.fence[y][1]
          fencea.className= "dropdown-item"
-         fencea.setAttribute("href", "/quests/" + result.fence[y])
+         fencea.setAttribute("href", "/quests/" + result.fence[y][0])
          document.getElementById("fencedropdown").appendChild(fenceli)
          document.getElementById("fenceli" + y).appendChild(fencea)
       }
@@ -43,9 +43,9 @@ function getquestnames() {
          var skierli = document.createElement("li")
          var skiera = document.createElement("a")
          skierli.setAttribute("id", "skierli" + y)
-         skiera.innerHTML = result.skier[y]
+         skiera.innerHTML = result.skier[y][1]
          skiera.className= "dropdown-item"
-         skiera.setAttribute("href", "/quests/" + result.skier[y])
+         skiera.setAttribute("href", "/quests/" + result.skier[y][0])
          document.getElementById("skierdropdown").appendChild(skierli)
          document.getElementById("skierli" + y).appendChild(skiera)
       }
@@ -53,9 +53,9 @@ function getquestnames() {
          var peacekeeperli = document.createElement("li")
          var peacekeepera = document.createElement("a")
          peacekeeperli.setAttribute("id", "peacekeeperli" + y)
-         peacekeepera.innerHTML = result.peacekeeper[y]
+         peacekeepera.innerHTML = result.peacekeeper[y][1]
          peacekeepera.className= "dropdown-item"
-         peacekeepera.setAttribute("href", "/quests/" + result.peacekeeper[y])
+         peacekeepera.setAttribute("href", "/quests/" + result.peacekeeper[y][0])
          document.getElementById("peacekeeperdropdown").appendChild(peacekeeperli)
          document.getElementById("peacekeeperli" + y).appendChild(peacekeepera)
       }
@@ -63,9 +63,9 @@ function getquestnames() {
          var mechanicli = document.createElement("li")
          var mechanica = document.createElement("a")
          mechanicli.setAttribute("id", "mechanicli" + y)
-         mechanica.innerHTML = result.mechanic[y]
+         mechanica.innerHTML = result.mechanic[y][1]
          mechanica.className= "dropdown-item"
-         mechanica.setAttribute("href", "/quests/" + result.mechanic[y])
+         mechanica.setAttribute("href", "/quests/" + result.mechanic[y][0])
          document.getElementById("mechanicdropdown").appendChild(mechanicli)
          document.getElementById("mechanicli" + y).appendChild(mechanica)
       }
@@ -73,9 +73,9 @@ function getquestnames() {
          var ragmanli = document.createElement("li")
          var ragmana = document.createElement("a")
          ragmanli.setAttribute("id", "ragmanli" + y)
-         ragmana.innerHTML = result.ragman[y]
+         ragmana.innerHTML = result.ragman[y][1]
          ragmana.className= "dropdown-item"
-         ragmana.setAttribute("href", "/quests/" + result.ragman[y])
+         ragmana.setAttribute("href", "/quests/" + result.ragman[y][0])
          document.getElementById("ragmandropdown").appendChild(ragmanli)
          document.getElementById("ragmanli" + y).appendChild(ragmana)
       }
@@ -83,9 +83,9 @@ function getquestnames() {
          var jaegerli = document.createElement("li")
          var jaegera = document.createElement("a")
          jaegerli.setAttribute("id", "jaegerli" + y)
-         jaegera.innerHTML = result.jaeger[y]
+         jaegera.innerHTML = result.jaeger[y][1]
          jaegera.className= "dropdown-item"
-         jaegera.setAttribute("href", "/quests/" + result.jaeger[y])
+         jaegera.setAttribute("href", "/quests/" + result.jaeger[y][0])
          document.getElementById("jaegerdropdown").appendChild(jaegerli)
          document.getElementById("jaegerli" + y).appendChild(jaegera)
       }

@@ -1,12 +1,12 @@
 {% extends 'phoenix/layout.html' %}
+{% load static %}
 {% block body %}
 <div id="container">
    <h3>Quest Name</h3>
    <p>{{quest.name}}</p>
 
    <h3>Quest Giver</h3>
-   <p>{{quest.questgiver}}</p>
-
+   <p><img src="{% static 'images/'|add:quest.questgiver|add:'.png' %}" alt="Prapor" width="128" height="128"></p>
    <h3>Objectives</h3>
    <ul>
       {% for x in quest.objectives %}

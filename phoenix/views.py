@@ -79,42 +79,42 @@ def questroute(request):
     ragmanjson = {}
     y=0
     for x in prapor:
-        praporjson.update({y : prapor[y].name})
+        praporjson.update({y : { 0: prapor[y].slug, 1: prapor[y].name}})
         y+=1
 
     y=0
     for x in therapist:
-        therapistjson.update({y : therapist[y].name})
+        therapistjson.update({y : { 0: therapist[y].slug, 1: therapist[y].name}})
         y+=1
 
     y=0
     for x in fence:
-        fencejson.update({y : fence[y].name})
+        fencejson.update({y : { 0: fence[y].slug, 1: fence[y].name}})
         y+=1
 
     y=0
     for x in skier:
-        skierjson.update({y : skier[y].name})
+        skierjson.update({y : { 0: skier[y].slug, 1: skier[y].name}})
         y+=1
 
     y=0
     for x in peacekeeper:
-        peacekeeperjson.update({y : peacekeeper[y].name})
+        peacekeeperjson.update({y : { 0: peacekeeper[y].slug, 1: peacekeeper[y].name}})
         y+=1
 
     y=0
     for x in mechanic:
-        mechanicjson.update({y : mechanic[y].name})
+        mechanicjson.update({y : { 0: mechanic[y].slug, 1: mechanic[y].name}})
         y+=1
 
     y=0
     for x in ragman:
-        ragmanjson.update({y : ragman[y].name})
+        ragmanjson.update({y : { 0: ragman[y].slug, 1: ragman[y].name}})
         y+=1
 
     y=0
     for x in jaeger:
-        jaegerjson.update({y : jaeger[y].name})
+        jaegerjson.update({y : { 0: jaeger[y].slug, 1: jaeger[y].name}})
         y+=1
 
     questjson = {}
@@ -131,7 +131,7 @@ def questroute(request):
     return JsonResponse(questjson)
 
 def quests(request, quest):
-    x=TarkovQuestTester.objects.get(name=quest)
+    x=TarkovQuestTester.objects.get(slug=quest)
 
     # rewards=str(x.rewards)
     # rewards1=rewards.replace("\\n", "<ul><li>", 1)
@@ -150,7 +150,7 @@ def quests(request, quest):
     # #     x.objectives=objectives2
 
     return render(request, 'phoenix/quests.html',{
-        "quest" : x
+        "quest" : x,
     })
 
 def importjson():
