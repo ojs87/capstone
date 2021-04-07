@@ -1,0 +1,20 @@
+{% extends 'phoenix/layout.html' %}
+{% block body %}
+<div class="container">
+   <div class="row">
+      <div class="col" id="praporquests">
+         <strong>Prapor Quests</strong>
+      </div>
+      <div class="col">
+         {% for x in array %}
+            <button id=quest1>{{x}}</button>
+         {% endfor %}
+      </div>
+   </div>
+   <div class="row">
+      <div class="col" id="therapistquests">
+         <strong>Therapist Quests</strong>
+      </div>
+   </div>
+</div>
+{% endblock %}

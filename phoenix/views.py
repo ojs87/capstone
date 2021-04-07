@@ -78,6 +78,23 @@ def foundinraid(request):
 def items(request):
     return render(request, 'phoenix/items.html')
 
+def tracker(request):
+    quests=TarkovQuestTester.objects.filter(questgiver="Prapor")
+    first=quests.get(name='Debut')
+    bigarray = {}
+    for p in quests:
+        bigarray.update({p.name: {}})
+    y=0
+    for p in quests:
+        y=0
+        for x in p.leadsto:
+            bigarray[p.name].update({y : x})
+            y+=1
+
+    return render(request, 'phoenix/tracker.html', {
+        'array' : bigarray
+    })
+
 
 @csrf_exempt
 def itemroute2(request):

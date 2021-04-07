@@ -10,6 +10,7 @@ urlpatterns = [
     path('items', views.items, name='items'),
     path('quests/<str:quest>', views.quests, name='quests'),
     path('foundinraid', views.foundinraid, name='foundinraid'),
+    path('tracker', views.tracker, name='tracker'),
 
     # API Routes
     path('itemroute', views.itemroute, name='itemroute'),
