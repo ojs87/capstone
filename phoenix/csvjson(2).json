@@ -1,0 +1,1062 @@
+[
+  {
+    "web-scraper-order": "1617110090-150",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Can of beef stew",
+    "canbecrafted": "Nutrition Unit lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 15,
+    "quest": "General wares"
+  },
+  {
+    "web-scraper-order": "1617110090-117",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Car battery",
+    "canbecrafted": "Workbench lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "Car repair"
+  },
+  {
+    "web-scraper-order": "1617110090-187",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Rechargeable battery",
+    "canbecrafted": "Workbench lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Signal - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-119",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "3-(b-TG)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Colleagues - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-149",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Dogtag (USEC)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 7,
+    "quest": "Friend from the West - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-136",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Shroud half-mask",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-141",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Powercord",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Farming - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-137",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Silver Badge",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-153",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Shturman key",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Huntsman path - Woods keeper"
+  },
+  {
+    "web-scraper-order": "1617110090-197",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "TOZ-106 bolt-action shotgun",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Supplier"
+  },
+  {
+    "web-scraper-order": "1617110090-108",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Respirator",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "Vitamins\" - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-122",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Antique axe",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-120",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "AHF1-M",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Colleagues - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-179",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Ski hat with holes for eyes",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Sew it good - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-161",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Horse figurine",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 2,
+    "quest": "Living high is not a crime - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-194",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Heat-exchange alkali surface washer",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 7"
+  },
+  {
+    "web-scraper-order": "1617110090-208",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Colt M4A1 5.56x45 Assault Rifle",
+    "canbecrafted": "No",
+    "questreward": "Friend from the West - Part 1 (1)\nThe Punisher - Part 4 (1)\nGunsmith - Part 9 (1)\nGunsmith - Part 16 (1)\nTerraGroup employee (4)",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "The Punisher - Part 5"
+  },
+  {
+    "web-scraper-order": "1617110090-198",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Aramid fiber cloth",
+    "canbecrafted": "Lavatory lv. 1",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 5,
+    "quest": "Textile - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-125",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Can of sprats",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-114",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Malboro Cigarettes",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "Bad habit"
+  },
+  {
+    "web-scraper-order": "1617110090-145",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Graphics card",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "The chemistry closet (1)",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Farming - Part 4"
+  },
+  {
+    "web-scraper-order": "1617110090-169",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "OFZ 30x160mm shell",
+    "canbecrafted": "Workbench lv. 3",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 5,
+    "quest": "Regulated materials"
+  },
+  {
+    "web-scraper-order": "1617110090-156",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "VPX Flash Storage Module",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "Huntsman path - Woods keeper (1)\nHunting trip (1)",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Import"
+  },
+  {
+    "web-scraper-order": "1617110090-190",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Ox bleach",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-131",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Jar of DevilDog mayo",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-175",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "P22",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-168",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "6-STEN-140-M military battery",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Regulated materials"
+  },
+  {
+    "web-scraper-order": "1617110090-193",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Corrugated hose",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 7"
+  },
+  {
+    "web-scraper-order": "1617110090-192",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "5L propane tank",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 7"
+  },
+  {
+    "web-scraper-order": "1617110090-184",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Broken GPhone",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Signal - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-133",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Old firesteel",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-211",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Dogtag (USEC)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 7,
+    "quest": "The Punisher - Part 6"
+  },
+  {
+    "web-scraper-order": "1617110090-165",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Morphine injector",
+    "canbecrafted": "Medstation lv. 2",
+    "questreward": "Vitamins - Part 2 (5)",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "Painkiller"
+  },
+  {
+    "web-scraper-order": "1617110090-121",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "42nd Signature Blend English Tea",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-111",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Iskra lunch box",
+    "canbecrafted": "Nutrition Unit lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Acquaintance"
+  },
+  {
+    "web-scraper-order": "1617110090-178",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Pilgrim tourist backpack",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Sew it good - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-135",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Raven figurine",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-146",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Capacitors",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "Fertilizers"
+  },
+  {
+    "web-scraper-order": "1617110090-188",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Clin wiper",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-206",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Bars A-2607- 95x18",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "The Punisher - Part 4"
+  },
+  {
+    "web-scraper-order": "1617110090-180",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "BlackRock chest rig",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Sew it good - Part 4"
+  },
+  {
+    "web-scraper-order": "1617110090-162",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Roler submariner gold wrist watch",
+    "canbecrafted": "No",
+    "questreward": "Chumming (1)",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Living high is not a crime - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-204",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Fuel conditioner",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "The Blood of War - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-155",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "UHF RFID Reader",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Import"
+  },
+  {
+    "web-scraper-order": "1617110090-118",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Spark plug",
+    "canbecrafted": "Workbench lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 8,
+    "quest": "Car repair"
+  },
+  {
+    "web-scraper-order": "1617110090-127",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Fake mustache",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-212",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Secure Flash drive",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "Huntsman path - Evil watchman (2)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "What's on the flash drive?"
+  },
+  {
+    "web-scraper-order": "1617110090-112",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "CMS kit",
+    "canbecrafted": "No",
+    "questreward": "The survivalist path - Tough guy (1)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Ambulance"
+  },
+  {
+    "web-scraper-order": "1617110090-110",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Emelya rye croutons",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Acquaintance"
+  },
+  {
+    "web-scraper-order": "1617110090-195",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Morphine injector",
+    "canbecrafted": "Medstation lv. 2",
+    "questreward": "Vitamins - Part 2 (5)",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "Spa Tour - Part 7"
+  },
+  {
+    "web-scraper-order": "1617110090-129",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Golden 1GPhone",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-167",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Ophthalmoscope",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Private clinic"
+  },
+  {
+    "web-scraper-order": "1617110090-160",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Cat figurine",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Living high is not a crime - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-209",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "PM 9x18PM pistol",
+    "canbecrafted": "No",
+    "questreward": "Debut (1)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "The Punisher - Part 5"
+  },
+  {
+    "web-scraper-order": "1617110090-144",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "CPU Fan",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 8,
+    "quest": "Farming - Part 4"
+  },
+  {
+    "web-scraper-order": "1617110090-163",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Antique teapot",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Living high is not a crime - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-185",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "PC CPU",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Signal - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-151",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Maska 1Sch helmet (Killa)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Huntsman path - Sell-out"
+  },
+  {
+    "web-scraper-order": "1617110090-210",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Dogtag (BEAR)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 7,
+    "quest": "The Punisher - Part 6"
+  },
+  {
+    "web-scraper-order": "1617110090-202",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "KEKTAPE duct tape",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 5,
+    "quest": "Textile - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-116",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Wilston cigarettes",
+    "canbecrafted": "Nutrition Unit lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "Bad habit"
+  },
+  {
+    "web-scraper-order": "1617110090-207",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "AK-74N 5.45x39 assault rifle",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "The bunker - Part 1 (1)",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "The Punisher - Part 5"
+  },
+  {
+    "web-scraper-order": "1617110090-203",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Polyamide fabric Cordura",
+    "canbecrafted": "Lavatory lv. 1",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 10,
+    "quest": "Textile - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-128",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "FireKlean gun lube",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-166",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "LEDX Skin Transilluminator",
+    "canbecrafted": "Medstation lv. 3",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Private clinic"
+  },
+  {
+    "web-scraper-order": "1617110090-113",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Portable defibrillator",
+    "canbecrafted": "Medstation lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Ambulance"
+  },
+  {
+    "web-scraper-order": "1617110090-157",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Military COFDM wireless Signal Transmitter",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Lend lease - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-142",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Printed circuit board",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Farming - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-139",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Kinda cowboy hat",
+    "canbecrafted": "No",
+    "questreward": "The Tarkov shooter\" - Part 3 (1)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Dressed to kill"
+  },
+  {
+    "web-scraper-order": "1617110090-201",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Fleece cloth",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 10,
+    "quest": "Textile - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-143",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "T-Shaped Plug",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 4,
+    "quest": "Farming - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-177",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Gas analyzer",
+    "canbecrafted": "No",
+    "questreward": "The Cult - Part 2 (3)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Sanitary Standards - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-176",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Gas analyzer",
+    "canbecrafted": "No",
+    "questreward": "The Cult - Part 2 (3)",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Sanitary Standards - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-181",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Wartech gear rig",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Sew it good - Part 4"
+  },
+  {
+    "web-scraper-order": "1617110090-200",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Ripstop cloth",
+    "canbecrafted": "Lavatory lv. 1",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 10,
+    "quest": "Textile - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-173",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "M.U.L.E. stimulator",
+    "canbecrafted": "Medstation lv. 2",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-154",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "60-round 6L31 5.45x39 magazine for AK-74 and compatibles",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Ice cream cones"
+  },
+  {
+    "web-scraper-order": "1617110090-123",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Battered antique Book",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-152",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "TT pistol 7.62x25 TT Gold",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Huntsman path - The trophy"
+  },
+  {
+    "web-scraper-order": "1617110090-164",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Antique vase",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Living high is not a crime - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-109",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Can of delicious beef stew",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Acquaintance"
+  },
+  {
+    "web-scraper-order": "1617110090-186",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Printed circuit board",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Signal - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-115",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Strike Cigarettes",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "Bad habit"
+  },
+  {
+    "web-scraper-order": "1617110090-171",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "AHF1-M",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-130",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Golden rooster",
+    "canbecrafted": "No",
+    "questreward": "Friend from the West - Part 1 (1)",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-147",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Wires",
+    "canbecrafted": "Workbench lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 5,
+    "quest": "Fertilizers"
+  },
+  {
+    "web-scraper-order": "1617110090-138",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Veritas guitar pick",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-124",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Can of Dr. Lupo's coffee beans",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-196",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Module-3M bodyarmor",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Supplier"
+  },
+  {
+    "web-scraper-order": "1617110090-158",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Virtex programmable processor",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Lend lease - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-174",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Meldonin",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-132",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Kotton beanie",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-172",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Cocktail \"Obdolbos",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-205",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Lower half-mask",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 7,
+    "quest": "The Punisher - Part 2"
+  },
+  {
+    "web-scraper-order": "1617110090-159",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Bronze lion",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Living high is not a crime - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-140",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Ushanka ear-flap cap",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Dressed to kill"
+  },
+  {
+    "web-scraper-order": "1617110090-170",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "3-(b-TG)",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 1,
+    "quest": "Samples"
+  },
+  {
+    "web-scraper-order": "1617110090-182",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Secure Flash drive",
+    "canbecrafted": "Intelligence Center lv. 2",
+    "questreward": "Huntsman path - Evil watchman (2)",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Shady business"
+  },
+  {
+    "web-scraper-order": "1617110090-134",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Pestily plague mask",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-191",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "WD-40 100ml.",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Spa Tour - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-183",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Salewa FIRST AID KIT",
+    "canbecrafted": "Medstation lv. 1",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Shortage"
+  },
+  {
+    "web-scraper-order": "1617110090-148",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "TerraGroup Labs access keycard",
+    "canbecrafted": "No",
+    "questreward": "Huntsman path - Woods keeper (3)",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Fishing place"
+  },
+  {
+    "web-scraper-order": "1617110090-189",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Corrugated hose",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 2,
+    "quest": "Spa Tour - Part 3"
+  },
+  {
+    "web-scraper-order": "1617110090-199",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Paracord",
+    "canbecrafted": "Lavatory lv. 2",
+    "questreward": "No",
+    "kappa": "No",
+    "amount": 3,
+    "quest": "Textile - Part 1"
+  },
+  {
+    "web-scraper-order": "1617110090-126",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Deadlyslob's beard oil",
+    "canbecrafted": "No",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 1,
+    "quest": "Collector"
+  },
+  {
+    "web-scraper-order": "1617110090-107",
+    "web-scraper-start-url": "https://escapefromtarkov.fandom.com/wiki/Found_in_raid",
+    "name": "Medical bloodset",
+    "canbecrafted": "Medstation lv. 2",
+    "questreward": "No",
+    "kappa": "Yes",
+    "amount": 3,
+    "quest": "Vitamins\" - Part 2"
+  }
+]
