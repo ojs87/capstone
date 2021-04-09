@@ -154,3 +154,37 @@ $(function() {
 
   });
 });
+
+function getFIRItems(node, csrftoken, clicked_id) {
+
+   var childdata = document.getElementById(clicked_id)
+   let childarray = []
+   var x=0
+   while(x<5){
+      if(childdata.nextElementSibling == null && x == 0){
+         break
+      } else if(childdata.nextElementSibling == null){
+         childdata = document.getElementById(clicked_id).nextElementSibling.children[1].children[0]
+         childarray.push(childdata.innerText)
+         x++
+      } else {
+         childdata= childdata.nextElementSibling.children[0].children[0]
+         childarray.push(childdata.innerText)
+         x++
+      }
+   }
+
+   let data = {
+      'node' : node,
+      'childnode' : childarray
+   }
+   fetch('/questroute', {
+      method: 'POST',
+      body : JSON.stringify(data),
+      headers: {"X-CSRFToken" : csrftoken}
+   })
+   .then(response => response.json())
+   .then(result => {
+      document.getElementById('FIRStuff').innerHTML = result[0].item
+   })
+}

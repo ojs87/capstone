@@ -1,20 +1,21 @@
 {% extends 'phoenix/layout.html' %}
+{% load mptt_tags %}
 {% block body %}
-<div class="container">
-   <div class="row">
-      <div class="col" id="praporquests">
-         <strong>Prapor Quests</strong>
-      </div>
-      <div class="col">
-         {% for x in array %}
-            <button id=quest1>{{x}}</button>
-         {% endfor %}
-      </div>
-   </div>
-   <div class="row">
-      <div class="col" id="therapistquests">
-         <strong>Therapist Quests</strong>
-      </div>
-   </div>
-</div>
+<p id='FIRStuff'>
+
+</p>
+{% csrf_token %}
+<ul class="root">
+   {% recursetree quests %}
+        <li>
+            <a href="#" id="{{node.name}}" onclick="getFIRItems('{{node.name}}', '{{csrf_token}}', this.id)">{{ node.name }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+      {% endrecursetree %}
+</ul>
+
 {% endblock %}

@@ -3,13 +3,15 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester, TarkovFoundInRaid
+from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester, TarkovFoundInRaid, TarkovQuestStructure
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.serializers import serialize
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
+
+
 
 def index(request):
     return render(request, 'phoenix/index.html',{
@@ -79,20 +81,15 @@ def items(request):
     return render(request, 'phoenix/items.html')
 
 def tracker(request):
-    quests=TarkovQuestTester.objects.filter(questgiver="Prapor")
-    first=quests.get(name='Debut')
-    bigarray = {}
-    for p in quests:
-        bigarray.update({p.name: {}})
-    y=0
-    for p in quests:
-        y=0
-        for x in p.leadsto:
-            bigarray[p.name].update({y : x})
-            y+=1
-
-    return render(request, 'phoenix/tracker.html', {
-        'array' : bigarray
+    # a=TarkovQuestTester.objects.all()
+    # b=TarkovQuestStructure.objects.create(name=x.name)
+    # for x in b:
+    #     c=TarkovQuestTester.objects.get(name=x.name)
+    #     for d in c.prereqs:
+    #         e=TarkovQuestTester.objects.get(name=d['prereqs'])
+    #         x.save(parent=e)
+    return render(request, "phoenix/tracker.html", {
+        'quests' : TarkovQuestStructure.objects.all()
     })
 
 
@@ -131,6 +128,23 @@ def itemroute(request):
     return JsonResponse(quest2)
 
 def questroute(request):
+    if request.method == 'POST':
+        data=json.loads(request.body)
+        nodedata=data.get("node", "")
+        childdata=data.get("childnode", "")
+        firstuff=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=nodedata).id)
+        # firstuff2=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=childdata).id)
+        jsonstuff = {}
+        y=0
+        for x in firstuff:
+            jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
+            y+=1
+        # for x in firstuff2:
+        #     jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
+        #     y+=1
+        response = JsonResponse(jsonstuff)
+        return response
+
     quests= TarkovQuestTester.objects.all()
     prapor=quests.filter(questgiver='Prapor').order_by("name")
     therapist=quests.filter(questgiver='Therapist').order_by("name")
