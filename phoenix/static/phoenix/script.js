@@ -155,24 +155,48 @@ $(function() {
   });
 });
 
+
 function getFIRItems(node, csrftoken, clicked_id) {
+
+   function populateList(array1, array2, arraynum){
+      a=document.getElementById(array1[arraynum])
+      while(a.nextElementSibling !== null && array2.length<5 ){
+         for(y of a.nextElementSibling.children){
+            array2.push(y.children[0].innerText)
+            x++
+         }
+         a=a.nextElementSibling.children[0].children[0]
+      }
+      return array2
+   }
 
    var childdata = document.getElementById(clicked_id)
    let childarray = []
-   var x=0
-   while(x<5){
-      if(childdata.nextElementSibling == null && x == 0){
-         break
-      } else if(childdata.nextElementSibling == null){
-         childdata = document.getElementById(clicked_id).nextElementSibling.children[1].children[0]
-         childarray.push(childdata.innerText)
-         x++
-      } else {
-         childdata= childdata.nextElementSibling.children[0].children[0]
-         childarray.push(childdata.innerText)
+   let arrayofparents = []
+   let x=0
+   let num=0
+   while(childdata.nextElementSibling !== null && x<5 ){
+      for(y of childdata.nextElementSibling.children){
+         childarray.push(y.children[0].innerText)
          x++
       }
+      if (childdata.nextElementSibling.children.length > 1){
+         for(i=1; i<childdata.nextElementSibling.children.length; i++){
+            arrayofparents.push(childdata.nextElementSibling.children[i].children[0].innerText)
+         }
+      }
+      childdata=childdata.nextElementSibling.children[0].children[0]
+
    }
+   while(childarray.length < 5){
+      if(arrayofparents.length > 0){
+         childarray = populateList(arrayofparents, childarray, num)
+         num++
+      }else{
+         break
+      }
+   }
+
 
    let data = {
       'node' : node,
