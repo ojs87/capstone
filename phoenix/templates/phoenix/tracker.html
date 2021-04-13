@@ -1,9 +1,9 @@
 {% extends 'phoenix/layout.html' %}
 {% load mptt_tags %}
 {% block body %}
-<p id='FIRStuff'>
+<ul id='FIRStuff'>
 
-</p>
+</ul>
 {% csrf_token %}
 <ul class="root">
    {% recursetree quests %}

@@ -159,11 +159,15 @@ $(function() {
 function getFIRItems(node, csrftoken, clicked_id) {
 
    function populateList(array1, array2, arraynum){
-      a=document.getElementById(array1[arraynum])
-      while(a.nextElementSibling !== null && array2.length<5 ){
+      a=document.getElementById(array1[0])
+      while(a.nextElementSibling !== null){
          for(y of a.nextElementSibling.children){
             array2.push(y.children[0].innerText)
-            x++
+         }
+         if (a.nextElementSibling.children.length > 1){
+            for(i=1; i<a.nextElementSibling.children.length; i++){
+               arrayofparents.push(a.nextElementSibling.children[i].children[0].innerText)
+            }
          }
          a=a.nextElementSibling.children[0].children[0]
       }
@@ -173,12 +177,9 @@ function getFIRItems(node, csrftoken, clicked_id) {
    var childdata = document.getElementById(clicked_id)
    let childarray = []
    let arrayofparents = []
-   let x=0
-   let num=0
-   while(childdata.nextElementSibling !== null && x<5 ){
+   while(childdata.nextElementSibling !== null){
       for(y of childdata.nextElementSibling.children){
          childarray.push(y.children[0].innerText)
-         x++
       }
       if (childdata.nextElementSibling.children.length > 1){
          for(i=1; i<childdata.nextElementSibling.children.length; i++){
@@ -188,13 +189,9 @@ function getFIRItems(node, csrftoken, clicked_id) {
       childdata=childdata.nextElementSibling.children[0].children[0]
 
    }
-   while(childarray.length < 5){
-      if(arrayofparents.length > 0){
-         childarray = populateList(arrayofparents, childarray, num)
-         num++
-      }else{
-         break
-      }
+   while(arrayofparents.length > 0){
+         childarray = populateList(arrayofparents, childarray)
+         arrayofparents.shift()
    }
 
 
@@ -209,6 +206,22 @@ function getFIRItems(node, csrftoken, clicked_id) {
    })
    .then(response => response.json())
    .then(result => {
-      document.getElementById('FIRStuff').innerHTML = result[0].item
+      a=document.getElementById('FIRStuff')
+      a.innerHTML=""
+      for(x in result){
+         if(document.getElementById("quest" + result[x].quest) == null){
+            var questli=document.createElement("li")
+            var itemul=document.createElement("ul")
+            var questtext = document.createTextNode(result[x].quest)
+            itemul.setAttribute("id", "quest" + result[x].quest)
+            a.appendChild(questli)
+            questli.appendChild(questtext)
+            questli.appendChild(itemul)
+         }
+         var text = document.createTextNode(result[x].num + "x " + result[x].item)
+         var li=document.createElement("li")
+         li.appendChild(text)
+         document.getElementById("quest" + result[x].quest).appendChild(li)
+      }
    })
 }

@@ -133,15 +133,16 @@ def questroute(request):
         nodedata=data.get("node", "")
         childdata=data.get("childnode", "")
         firstuff=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=nodedata).id)
-        # firstuff2=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=childdata).id)
         jsonstuff = {}
         y=0
         for x in firstuff:
             jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
             y+=1
-        # for x in firstuff2:
-        #     jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
-        #     y+=1
+        for x in childdata:
+             p=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=x).id)
+             for i in p:
+                 jsonstuff[y] = {"quest" : str(i.quest), "item" : str(i.name), "num" : str(i.amount)}
+                 y+=1
         response = JsonResponse(jsonstuff)
         return response
 
@@ -217,6 +218,14 @@ def questroute(request):
 
 def quests(request, quest):
     x=TarkovQuestTester.objects.get(slug=quest)
+    prereqs= {}
+    leadsto = {}
+
+    for prereq in x.prereqs:
+        prereqs.update({TarkovQuestTester.objects.get(name=prereq["prereqs"]).name : TarkovQuestTester.objects.get(name=prereq["prereqs"]).slug})
+
+    for leadto in x.leadsto:
+        leadsto.update({TarkovQuestTester.objects.get(name=leadto["leadsto"]).name : TarkovQuestTester.objects.get(name=leadto["leadsto"]).slug})
 
     # rewards=str(x.rewards)
     # rewards1=rewards.replace("\\n", "<ul><li>", 1)
@@ -236,6 +245,8 @@ def quests(request, quest):
 
     return render(request, 'phoenix/quests.html',{
         "quest" : x,
+        "prereqs" : prereqs,
+        "leadsto" : leadsto,
     })
 
 def importjson():
