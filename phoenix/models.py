@@ -3,6 +3,7 @@ from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 
 class User(AbstractUser):
+    onquests = models.ManyToManyField("TarkovQuestTester", related_name="onquest")
     pass
 
 class TarkovQuest(models.Model):

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester, TarkovFoundInRaid, TarkovQuestStructure
+from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester, TarkovFoundInRaid, TarkovQuestStructure, User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
@@ -127,25 +127,7 @@ def itemroute(request):
 
     return JsonResponse(quest2)
 
-def questroute(request):
-    if request.method == 'POST':
-        data=json.loads(request.body)
-        nodedata=data.get("node", "")
-        childdata=data.get("childnode", "")
-        firstuff=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=nodedata).id)
-        jsonstuff = {}
-        y=0
-        for x in firstuff:
-            jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
-            y+=1
-        for x in childdata:
-             p=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=x).id)
-             for i in p:
-                 jsonstuff[y] = {"quest" : str(i.quest), "item" : str(i.name), "num" : str(i.amount)}
-                 y+=1
-        response = JsonResponse(jsonstuff)
-        return response
-
+def questmenu(request):
     quests= TarkovQuestTester.objects.all()
     prapor=quests.filter(questgiver='Prapor').order_by("name")
     therapist=quests.filter(questgiver='Therapist').order_by("name")
@@ -213,8 +195,60 @@ def questroute(request):
     questjson.update({"ragman" : ragmanjson})
     questjson.update({"jaeger" : jaegerjson})
 
-
     return JsonResponse(questjson)
+
+@csrf_exempt
+def questroute(request):
+    if request.method == 'GET':
+        user=User.objects.get(username=request.user)
+        jsonstuff = {}
+        y=0
+        for x in user.onquests.all():
+            jsonstuff[y] = {"name" : x.name}
+            y+=1
+        response = JsonResponse(jsonstuff)
+        return response
+
+    elif request.method =='PUT':
+        data=json.loads(request.body)
+        nodedata=data.get("node", "")
+        user=User.objects.get(username=request.user)
+        user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
+        return HttpResponse(status=204)
+
+    elif request.method == 'POST':
+        data=json.loads(request.body)
+        nodedata=data.get("node", "")
+        # childdata=data.get("childnode", "")
+        user=User.objects.get(username=request.user)
+        nodeancestors = TarkovQuestStructure.objects.get(name=nodedata).get_ancestors()
+        nodedescendants = TarkovQuestStructure.objects.get(name=nodedata).get_descendants()
+        user.onquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
+        for x in nodeancestors:
+            user.onquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
+        for x in nodedescendants:
+            user.onquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
+        jsonstuff = {}
+        y=0
+        for x in user.onquests.all():
+            jsonstuff[y] = {"name" : x.name}
+            y+=1
+        # if user.onquests.filter(pk=TarkovQuestTester.objects.get(name=nodedata).id).exists():
+        #     user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
+        # else:
+        #     savequest=user.onquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
+        # firstuff=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=nodedata).id)
+        #
+        # for x in firstuff:
+        #     jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
+        #     y+=1
+        # for x in childdata:
+        #      p=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=x).id)
+        #      for i in p:
+        #          jsonstuff[y] = {"quest" : str(i.quest), "item" : str(i.name), "num" : str(i.amount)}
+        #          y+=1
+        response = JsonResponse(jsonstuff)
+        return response
 
 def quests(request, quest):
     x=TarkovQuestTester.objects.get(slug=quest)

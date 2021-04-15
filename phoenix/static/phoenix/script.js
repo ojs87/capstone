@@ -1,10 +1,71 @@
 document.addEventListener('DOMContentLoaded', function(){
-
    getquestnames()
+   document.querySelectorAll('#questlink').forEach(item => {
+      item.addEventListener('click', () => {
+         let data = {
+            "node" : item.innerText
+         }
+         fetch('/questroute', {
+            method: 'POST',
+            body : JSON.stringify(data),
+            headers: {"X-CSRFToken" : item.dataset.csrf}
+         })
+         .then(response => response.json())
+         .then(result => {
+            buildquestlist()
+         })
+      });
+   });
+
+   // for(i=0; i<closebtns.length; i++){
+   //    closebtns[i].addEventListener("click", function() {
+   //       this.parentElement.style.display = 'none';
+   //    })
+   // }
 });
 
-function getquestnames() {
+function buildquestlist() {
    fetch('/questroute', {
+      method: 'GET',
+   })
+   .then(response => response.json())
+   .then(result => {
+      a=document.getElementById("questlistul")
+      a.innerHTML=""
+      for(x in result){
+         var createquestli=document.createElement("li")
+         createquestli.setAttribute("id", "questlistli")
+         createquestli.innerText = result[x].name
+         createquestli.className = "dropdown-item"
+         var createspanx= document.createElement("span")
+         createspanx.className="closequest"
+         createspanx.innerHTML="&times;"
+         createquestli.appendChild(createspanx)
+         a.appendChild(createquestli)
+         var closebtns = document.getElementsByClassName("closequest");
+         var i
+         for(i=0; i<closebtns.length; i++){
+            closebtns[i].addEventListener("click", function() {
+               if (this.parentElement !== null){
+                  pElement = this.parentElement
+                  pElement.removeChild(this)
+                  data = {
+                     "node" : pElement.innerText
+                  }
+                  fetch('/questroute', {
+                     method: 'PUT',
+                     body: JSON.stringify(data)
+                  })
+                  pElement.style.display = 'none';
+               }
+            })
+         }
+      }
+   })
+}
+
+function getquestnames() {
+   fetch('/questmenu', {
       method: 'GET',
    })
    .then(response => response.json())

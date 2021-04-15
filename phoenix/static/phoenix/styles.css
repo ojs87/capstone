@@ -100,3 +100,30 @@ table {
   /* icon size, then gradient */
   background-size: .65em auto, 100%;
 }
+
+#fixedblock {
+   position:fixed;
+   right:0;
+   top:0;
+   bottom:0;
+   width:30%;
+   border:3px solid white;
+   margin-top:56px;
+}
+
+#questlistli {
+   display:block;
+   position:relative;
+   width:300px;
+}
+
+.closequest {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   right: 0%;
+   padding: 4px 16px;
+   transform: translate(0%, -50%);
+}
+
+.closequest:hover {background:#bbb}

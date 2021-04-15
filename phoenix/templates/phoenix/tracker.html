@@ -8,7 +8,7 @@
 <ul class="root">
    {% recursetree quests %}
         <li>
-            <a href="#" id="{{node.name}}" onclick="getFIRItems('{{node.name}}', '{{csrf_token}}', this.id)">{{ node.name }}</a>
+            <button id="questlink" data-csrf='{{csrf_token}}'>{{ node.name }}</button>
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}
@@ -17,5 +17,15 @@
         </li>
       {% endrecursetree %}
 </ul>
-
+<div id="fixedblock">
+   <h1>Current Quests</h1>
+   <ul id="questlistul">
+      <li class="dropdown-item" id="questlistli">Testing test<span class="closequest">&times;</span></li>
+   </ul>
+</div>
 {% endblock %}
+{% block script%}
+<script>buildquestlist()</script>
+{% endblock %}
+
+<!-- onclick="getFIRItems('{{node.name}}', '{{csrf_token}}', this.value)" -->
