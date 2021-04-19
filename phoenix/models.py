@@ -4,7 +4,6 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 class User(AbstractUser):
     onquests = models.ManyToManyField("TarkovQuestTester", related_name="onquest")
-    pass
 
 class TarkovQuest(models.Model):
     name = models.CharField(max_length=128)
@@ -78,6 +77,7 @@ class TarkovQuestTester(models.Model):
 
 class TarkovQuestStructure(MPTTModel):
     name=models.CharField(max_length=50, unique=True)
+    questgiver = models.CharField(max_length=50, default="Prapor")
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
     class MPTTMeta:

@@ -60,6 +60,56 @@ table {
   columns:2;
 }
 
+button {
+   background-color: #242424;
+   border: none;
+   color: #ffffff80;
+}
+
+button:hover {
+   color: #ffffffbf
+}
+
+ul.listlines li {
+   list-style-type:none;
+}
+
+ul.listlines li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+
+}
+
+ul.listlines li:after {
+    /* bullets */
+    content: url("/static/images/littlecircle.png");
+    position: absolute;
+    left: -21px; /*adjust manually*/
+    top: 4px;
+}
+
+ul.listlines li:before {
+    /* lines */
+    content:"";
+    position: absolute;
+    left: -12px; /* adjust manually */
+    border-left: 1px solid black;
+    height: 100%;
+    width: 1px;
+}
+
+ul.listlines li:first-child:before {
+   /* first li's line */
+   top: 10px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+}
+
+ul.listlines li:last-child:before {
+    /* last li's line */
+   height: 9px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+}
+
+
 #linebreak {
    white-space:pre-line;
 }
@@ -127,3 +177,7 @@ table {
 }
 
 .closequest:hover {background:#bbb}
+
+#image {
+   margin-left:15px;
+}

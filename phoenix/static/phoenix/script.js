@@ -30,12 +30,49 @@ function buildquestlist() {
    })
    .then(response => response.json())
    .then(result => {
+      a=document.getElementById('FIRStuff')
+      a.innerHTML=""
+      resoolt = result[1]
+      for(x in resoolt){
+         if(document.getElementById("quest" + resoolt[x].quest) == null){
+            var questli=document.createElement("li")
+            var itemul=document.createElement("ul")
+            var questtext = document.createTextNode(resoolt[x].quest)
+            itemul.setAttribute("id", "quest" + resoolt[x].quest)
+            a.appendChild(questli)
+            questli.appendChild(questtext)
+            questli.appendChild(itemul)
+         }
+         var text = document.createTextNode(resoolt[x].num + "x " + resoolt[x].item)
+         var li=document.createElement("li")
+         li.appendChild(text)
+         document.getElementById("quest" + resoolt[x].quest).appendChild(li)
+      }
+      //comaparer function for sort
+      // function GetSortOrder(prop) {
+      //    return function(a, b) {
+      //       if (a[prop] > b[prop]) {
+      //          return 1;
+      //       } else if (a[prop] < b[prop]) {
+      //          return -1;
+      //       }
+      //       return 0;
+      //    }
+      // }
+      // function sortresult(){
+      //    return [].slice.call(arguments).sort((a, b) => (a.name > b.name) ? 1 : (b.name > a.name) ? -1 : 0)
+      // }
+      // result3=result
+      // result2 = sortresult(result)
+      // alert(result2)
+
       a=document.getElementById("questlistul")
       a.innerHTML=""
-      for(x in result){
+      roosalt = result[0]
+      for(x in roosalt){
          var createquestli=document.createElement("li")
          createquestli.setAttribute("id", "questlistli")
-         createquestli.innerText = result[x].name
+         createquestli.innerText = roosalt[x].name
          createquestli.className = "dropdown-item"
          var createspanx= document.createElement("span")
          createspanx.className="closequest"
@@ -52,9 +89,11 @@ function buildquestlist() {
                   data = {
                      "node" : pElement.innerText
                   }
+                  csrf=document.getElementById('questlink')
                   fetch('/questroute', {
                      method: 'PUT',
-                     body: JSON.stringify(data)
+                     body: JSON.stringify(data),
+                     headers: {"X-CSRFToken" : csrf.dataset.csrf}
                   })
                   pElement.style.display = 'none';
                }

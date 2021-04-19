@@ -88,8 +88,18 @@ def tracker(request):
     #     for d in c.prereqs:
     #         e=TarkovQuestTester.objects.get(name=d['prereqs'])
     #         x.save(parent=e)
+    Prapor=TarkovQuestStructure.objects.filter(questgiver="Prapor")
+
     return render(request, "phoenix/tracker.html", {
-        'quests' : TarkovQuestStructure.objects.all()
+        'quests' : TarkovQuestStructure.objects.all(),
+        'prapor' : Prapor,
+        'therapist' : TarkovQuestStructure.objects.filter(questgiver="Therapist"),
+        'fence' : TarkovQuestStructure.objects.filter(questgiver="Fence"),
+        'skier' : TarkovQuestStructure.objects.filter(questgiver="Skier"),
+        'peacekeeper' : TarkovQuestStructure.objects.filter(questgiver="Peacekeeper"),
+        'mechanic' : TarkovQuestStructure.objects.filter(questgiver="Mechanic"),
+        'ragman' : TarkovQuestStructure.objects.filter(questgiver="Ragman"),
+        'jaeger' : TarkovQuestStructure.objects.filter(questgiver="Jaeger"),
     })
 
 
@@ -197,16 +207,38 @@ def questmenu(request):
 
     return JsonResponse(questjson)
 
-@csrf_exempt
 def questroute(request):
     if request.method == 'GET':
         user=User.objects.get(username=request.user)
         jsonstuff = {}
+        firstuff = {}
         y=0
         for x in user.onquests.all():
             jsonstuff[y] = {"name" : x.name}
             y+=1
-        response = JsonResponse(jsonstuff)
+        y=0
+        rootnodes = TarkovQuestStructure.objects.root_nodes()
+        rootnodesuser = []
+        y=0
+        rootnodesmissing = []
+        for p in user.onquests.all():
+            rootnodesuser.append(TarkovQuestStructure.objects.get(name=p).get_root())
+        for p in rootnodes:
+            if p not in rootnodesuser:
+                rootnodesmissing.append(p)
+        for i in rootnodesmissing:
+            for n in TarkovQuestStructure.objects.get(name=i).get_descendants(include_self=True):
+                firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=n.name).id)
+                for p in firitems:
+                    firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
+                    y+=1
+        for x in user.onquests.all():
+            for i in TarkovQuestStructure.objects.get(name=x).get_descendants(include_self=True):
+                firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=i.name).id)
+                for p in firitems:
+                    firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
+                    y+=1
+        response = JsonResponse({0: jsonstuff, 1: firstuff})
         return response
 
     elif request.method =='PUT':
@@ -228,11 +260,38 @@ def questroute(request):
             user.onquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
         for x in nodedescendants:
             user.onquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
-        jsonstuff = {}
-        y=0
-        for x in user.onquests.all():
-            jsonstuff[y] = {"name" : x.name}
-            y+=1
+        # jsonstuff = {}
+        # firstuff = {}
+        #
+        # y=0
+        # for x in user.onquests.all():
+        #     jsonstuff[y] = {"name" : x.name}
+        #     y+=1
+        # rootnodes = TarkovQuestStructure.objects.root_nodes()
+        # rootnodesuser = []
+        # y=0
+        # rootnodesmissing = []
+        # for p in user.onquests.all():
+        #     rootnodesuser.append(TarkovQuestStructure.objects.get(name=p).get_root())
+        # for p in rootnodes:
+        #     if p not in rootnodesuser:
+        #         rootnodesmissing.append(p)
+        # for i in rootnodesmissing:
+        #     for n in TarkovQuestStructure.objects.get(name=i).get_descendants(include_self=True):
+        #         firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=n.name).id)
+        #         for p in firitems:
+        #             firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
+        #             y+=1
+        # for i in TarkovQuestStructure.objects.get(name=x).get_descendants(include_self=True):
+        #     firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=i.name).id)
+        #     for p in firitems:
+        #         firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
+        #         y+=1
+
+        response = JsonResponse({0 : "nice"})
+        return response
+
+
         # if user.onquests.filter(pk=TarkovQuestTester.objects.get(name=nodedata).id).exists():
         #     user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
         # else:
@@ -242,13 +301,8 @@ def questroute(request):
         # for x in firstuff:
         #     jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
         #     y+=1
-        # for x in childdata:
-        #      p=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=x).id)
-        #      for i in p:
-        #          jsonstuff[y] = {"quest" : str(i.quest), "item" : str(i.name), "num" : str(i.amount)}
-        #          y+=1
-        response = JsonResponse(jsonstuff)
-        return response
+
+
 
 def quests(request, quest):
     x=TarkovQuestTester.objects.get(slug=quest)
