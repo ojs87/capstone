@@ -30,17 +30,20 @@ function buildquestlist() {
    })
    .then(response => response.json())
    .then(result => {
-      a=document.getElementById('FIRStuff')
+      a=document.getElementById('questsfir')
       a.innerHTML=""
       resoolt = result[1]
       for(x in resoolt){
          if(document.getElementById("quest" + resoolt[x].quest) == null){
             var questli=document.createElement("li")
             var itemul=document.createElement("ul")
+            var h3 = document.createElement("strong")
             var questtext = document.createTextNode(resoolt[x].quest)
             itemul.setAttribute("id", "quest" + resoolt[x].quest)
+            itemul.className = "listpadding"         
             a.appendChild(questli)
-            questli.appendChild(questtext)
+            h3.appendChild(questtext)
+            questli.appendChild(h3)
             questli.appendChild(itemul)
          }
          var text = document.createTextNode(resoolt[x].num + "x " + resoolt[x].item)
@@ -222,7 +225,7 @@ function getquestitems() {
          tablerowinside.setAttribute("id", "tablerowjs" + y )
          document.getElementById("tablejs").appendChild(tablerowinside)
          var tablecell = document.createElement("td")
-         tablecell.innerHTML = "<a href='/quests/" + result[y].quest + "'>" + result[y].quest + "</a>"
+         tablecell.innerHTML = "<a href='/quests/" + result[y].slug + "'>" + result[y].quest + "</a>"
          document.getElementById("tablerowjs" + y).appendChild(tablecell)
          var tablecell2 = document.createElement("td")
          tablecell2.innerHTML = result[y].num
@@ -306,11 +309,11 @@ function getFIRItems(node, csrftoken, clicked_id) {
    })
    .then(response => response.json())
    .then(result => {
-      a=document.getElementById('FIRStuff')
+      a=document.getElementById('questsfir')
       a.innerHTML=""
       for(x in result){
          if(document.getElementById("quest" + result[x].quest) == null){
-            var questli=document.createElement("li")
+            var questli=document.createElement("h3")
             var itemul=document.createElement("ul")
             var questtext = document.createTextNode(result[x].quest)
             itemul.setAttribute("id", "quest" + result[x].quest)

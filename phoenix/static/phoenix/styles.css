@@ -2,12 +2,15 @@ body {
    /* background-color:#c1c1c1; */
    background-color:#404040;
    color:#ffffffbf;
+   margin-top:0
 }
 
 .navbar {
    /* background-color:#b4b3b3; */
    background-color:#242424;
-
+   position:fixed;
+   z-index:1000;
+   width:100%;
 }
 
 a {
@@ -24,6 +27,10 @@ table, td, th{
 table {
    width: 30%;
    table-layout:fixed
+}
+
+strong {
+   color:#ffffffbf
 }
 
 .dropdown-menu {
@@ -156,15 +163,57 @@ ul.listlines li:last-child:before {
    right:0;
    top:0;
    bottom:0;
-   width:30%;
+   width:20%;
    border:3px solid white;
    margin-top:56px;
+}
+
+#fixedblock h3 {
+   margin-left:30px;
+}
+
+#FIRStuff h3 {
+   margin-left:30px;
+}
+
+#FIRStuff {
+   position:fixed;
+   right:20%;
+   top:0;
+   bottom:0;
+   width:20%;
+   border:3px solid white;
+   border-right:none;
+   margin-top:56px;
+   overflow:scroll;
+}
+
+#treestructurediv{
+   padding-top:60px;
+}
+
+#FIRStuff li {
+   color: #ffffff80;
+}
+
+#questsfir li {
+   color: #ffffff80;
+   list-style-type: none;
+
+}
+
+.listpadding {
+   padding-left:20px;
 }
 
 #questlistli {
    display:block;
    position:relative;
    width:300px;
+}
+
+#questlistul {
+   padding-left:20px;
 }
 
 .closequest {

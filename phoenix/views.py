@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import TarkovItem, TarkovQuest, TarkovItemQuest, TarkovQuestTester, TarkovFoundInRaid, TarkovQuestStructure, User
+from .models import TarkovItem, TarkovQuestTester, TarkovFoundInRaid, TarkovQuestStructure, User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
@@ -69,12 +69,9 @@ def register(request):
 
 def foundinraid(request):
     items=TarkovFoundInRaid.objects.all().values('name').distinct().order_by('name')
-    quests=TarkovQuest.objects.all()
-    itemquest=TarkovItemQuest.objects.all()
+
     return render(request, 'phoenix/foundinraid.html', {
         "items" : items,
-        "quests" : quests,
-        "itemquest" : itemquest
     })
 
 def items(request):
@@ -103,36 +100,17 @@ def tracker(request):
     })
 
 
-@csrf_exempt
-def itemroute2(request):
-    data=json.loads(request.body)
-    body=data.get("body", "")
-    itemquest = TarkovItemQuest.objects.filter(tarkovitem=TarkovItem.objects.get(name=body))
-    # quest = itemquest[0]
-    # quest2 = str(quest.tarkovquest)
-    quest2={}
-    y=0
-    num="numberofitems"
-    for x in itemquest:
-        quest2[y] = {"quest" : str(x.tarkovquest), "num" : str(x.numberofitems)}
-
-        y += 1
-    # item= serialize('json', quest)
-    # item2 = serialize('json', quest)
-    # return JsonResponse({"message" : body, "quest" : quest[0]})
-    return JsonResponse(quest2)
 
 @csrf_exempt
 def itemroute(request):
     data=json.loads(request.body)
     body=data.get("body", "")
     itemquest=TarkovFoundInRaid.objects.filter(name=body)
-
     quest2={}
     y=0
     num="numberofitems"
     for x in itemquest:
-        quest2[y] = {"quest" : str(x.quest), "num" : str(x.amount)}
+        quest2[y] = {"quest" : str(x.quest), "num" : str(x.amount), "slug" : str(TarkovQuestTester.objects.get(name=x.quest).slug)}
         y+=1
 
     return JsonResponse(quest2)

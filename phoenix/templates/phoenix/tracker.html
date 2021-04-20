@@ -2,10 +2,9 @@
 {% load mptt_tags %}
 {% load static %}
 {% block body %}
-<ul id='FIRStuff'>
 
-</ul>
 {% csrf_token %}
+<div id="treestructurediv">
 <p id="image"><img src="{% static 'images/Prapor.png' %}" alt="Prapor" width="128" height="128"></p>
 <ul class="praporroot listlines">
 {% recursetree prapor %}
@@ -110,12 +109,16 @@
    </li>
 {% endrecursetree %}
 </ul>
+</div>
 
-<div id="fixedblockfir">
+<div id="FIRStuff">
+   <h3>Items you need</h3>
+   <ul id="questsfir">
 
+   </ul>
 </div>
 <div id="fixedblock">
-   <h1>Current Quests</h1>
+   <h3>Current quests</h3>
    <ul id="questlistul">
       <li class="dropdown-item" id="questlistli" data-csrf='{{csrf_token}}'>Testing test<span class="closequest">&times;</span></li>
    </ul>
