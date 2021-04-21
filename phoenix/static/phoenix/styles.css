@@ -2,7 +2,7 @@ body {
    /* background-color:#c1c1c1; */
    background-color:#404040;
    color:#ffffffbf;
-   margin-top:0
+   margin-top:0;
 }
 
 .navbar {
@@ -24,6 +24,10 @@ table, td, th{
    border:1px solid black
 }
 
+h3 {
+   padding-left:5px;
+}
+
 table {
    width: 30%;
    table-layout:fixed
@@ -38,9 +42,11 @@ strong {
    color:#ffffff80
 }
 
+
 .dropdown-item {
    color:#ffffff80;
 }
+
 
 .dropdown-item:hover {
    background-color: #242424;
@@ -52,6 +58,10 @@ strong {
   background-color: #242424;
 }
 
+.dropdown-item:focus {
+   background-color:#242424;
+   color:#ffffffbf;
+}
 .dropdown-submenu>a:after {
   content: "\f0da";
   float: right;
@@ -116,6 +126,14 @@ ul.listlines li:last-child:before {
    height: 9px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
 }
 
+.bluebox {
+   background-color:blue
+}
+
+.greenbox {
+   background-color:green;
+}
+
 
 #linebreak {
    white-space:pre-line;
@@ -123,7 +141,12 @@ ul.listlines li:last-child:before {
 
 #container {
    padding:10px;
+   padding-top:60px;
    margin-left:5px;
+}
+
+.ulpadding ul {
+   padding-left:10px;
 }
 
 #quest {
@@ -192,6 +215,8 @@ ul.listlines li:last-child:before {
    padding-top:60px;
 }
 
+
+
 #FIRStuff li {
    color: #ffffff80;
 }
@@ -202,18 +227,22 @@ ul.listlines li:last-child:before {
 
 }
 
-.listpadding {
-   padding-left:20px;
+
+
+.sticky-top {
+   top:60px;
+   z-index:500;
 }
 
 #questlistli {
    display:block;
    position:relative;
    width:300px;
+   padding-left:10px;
 }
 
 #questlistul {
-   padding-left:20px;
+   padding-left:0px;
 }
 
 .closequest {
@@ -221,11 +250,11 @@ ul.listlines li:last-child:before {
    position: absolute;
    top: 50%;
    right: 0%;
-   padding: 4px 16px;
+   padding: 0 16px 4px 16px;
    transform: translate(0%, -50%);
 }
 
-.closequest:hover {background:#bbb}
+
 
 #image {
    margin-left:15px;

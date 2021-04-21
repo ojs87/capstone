@@ -6,6 +6,7 @@
       <script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
       <script src="{% static 'phoenix/script.js' %}"></script>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
        <link href="{% static 'phoenix/styles.css' %}" rel="stylesheet">
@@ -16,6 +17,11 @@
    <body>
       <nav class="navbar navbar-expand-lg navbar-dark">
          <a class="navbar-brand" href={% url "index" %}>Tarkov Helper</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
          <ul class="navbar-nav mr-auto">
 
             <!-- Level one dropdown -->
@@ -98,6 +104,7 @@
                  </li>
              {% endif %}
            </ul>
+           </div>
       </nav>
       <div>
          {% block body %}

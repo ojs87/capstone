@@ -1,0 +1,34 @@
+User db:
+
+Quests you are on
+
+Quests you have completed
+
+if not in either, get items found in raid still needed
+
+
+
+If you click on a quest:
+
+update Quests you are on by with the clicked quest
+update Quests you have completed with the ancestors of clicked quest
+
+remove all descendants from Quests you are on
+
+
+
+If you click a second time:
+
+Update Quests you have completed
+
+
+If you click a blue quest:
+
+Remove from Quests you have completed
+
+
+
+If you click X on current quests:
+
+Remove quest from quests you are on
+Remove ancestors from quests you have completed

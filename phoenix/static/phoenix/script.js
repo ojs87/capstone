@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
          .then(response => response.json())
          .then(result => {
             buildquestlist()
+            highlightancestors(item)
          })
       });
    });
@@ -40,7 +41,6 @@ function buildquestlist() {
             var h3 = document.createElement("strong")
             var questtext = document.createTextNode(resoolt[x].quest)
             itemul.setAttribute("id", "quest" + resoolt[x].quest)
-            itemul.className = "listpadding"         
             a.appendChild(questli)
             h3.appendChild(questtext)
             questli.appendChild(h3)
@@ -51,23 +51,6 @@ function buildquestlist() {
          li.appendChild(text)
          document.getElementById("quest" + resoolt[x].quest).appendChild(li)
       }
-      //comaparer function for sort
-      // function GetSortOrder(prop) {
-      //    return function(a, b) {
-      //       if (a[prop] > b[prop]) {
-      //          return 1;
-      //       } else if (a[prop] < b[prop]) {
-      //          return -1;
-      //       }
-      //       return 0;
-      //    }
-      // }
-      // function sortresult(){
-      //    return [].slice.call(arguments).sort((a, b) => (a.name > b.name) ? 1 : (b.name > a.name) ? -1 : 0)
-      // }
-      // result3=result
-      // result2 = sortresult(result)
-      // alert(result2)
 
       a=document.getElementById("questlistul")
       a.innerHTML=""
@@ -105,6 +88,32 @@ function buildquestlist() {
       }
    })
 }
+
+function highlightancestors(item) {
+   if(item.className =="greenbox" && item.parentElement.parentElement.parentElement.children[0].id =="image"){
+      item.classList.remove("greenbox")
+   }else if(item.className == "greenbox"){
+      item.classList.remove("greenbox")
+      item.className = "bluebox"
+   }else if(item.className =="bluebox" && item.parentElement.parentElement.parentElement.children[0].id =="image"){
+      item.classList.remove("bluebox")
+      item.className = "greenbox"
+   }else{
+      item.className="greenbox"
+   }
+   a=item.parentElement.parentElement.parentElement.children[0]
+   while(a.id != "image"){
+      a.className="bluebox"
+      a=a.parentElement.parentElement.parentElement.children[0]
+   }
+   a=item.nextElementSibling
+   b=a.getElementsByTagName("button")
+   for(x of b){
+      x.classList.remove("bluebox")
+      x.classList.remove("greenbox")
+   }
+}
+
 
 function getquestnames() {
    fetch('/questmenu', {
@@ -239,7 +248,7 @@ $(function() {
   // ------------------------------------------------------- //
   // Multi Level dropdowns
   // ------------------------------------------------------ //
-  $("ul.dropdown-menu [data-toggle='dropdown']").on("mouseover", function(event) {
+  $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function(event) {
     event.preventDefault();
     event.stopPropagation();
     if (!$(this).next().hasClass('show')) {
