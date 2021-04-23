@@ -15,5 +15,6 @@ urlpatterns = [
     # API Routes
     path('itemroute', views.itemroute, name='itemroute'),
     path('questroute', views.questroute, name='questroute'),
-    path('questmenu', views.questmenu, name='questmenu')
+    path('questmenu', views.questmenu, name='questmenu'),
+    path('getquests', views.getquests, name='getquests')
 ]

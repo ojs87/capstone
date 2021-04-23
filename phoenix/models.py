@@ -4,6 +4,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 class User(AbstractUser):
     onquests = models.ManyToManyField("TarkovQuestTester", related_name="onquest")
+    completedquests = models.ManyToManyField("TarkovQuestTester", related_name="completed")
 
 
 class TarkovHideout(models.Model):

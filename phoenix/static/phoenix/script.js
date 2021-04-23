@@ -1,20 +1,47 @@
 document.addEventListener('DOMContentLoaded', function(){
    getquestnames()
-   document.querySelectorAll('#questlink').forEach(item => {
+   initialhighlight()
+   document.querySelectorAll('button').forEach(item => {
       item.addEventListener('click', () => {
          let data = {
             "node" : item.innerText
          }
-         fetch('/questroute', {
-            method: 'POST',
-            body : JSON.stringify(data),
-            headers: {"X-CSRFToken" : item.dataset.csrf}
-         })
-         .then(response => response.json())
-         .then(result => {
-            buildquestlist()
-            highlightancestors(item)
-         })
+         if(item.className =="greenbox" && item.parentElement.parentElement.parentElement.children[0].id =="image"){
+            console.log("nice")
+            fetch('/getquests', {
+               method:'POST',
+               body : JSON.stringify(data),
+               headers: {"X-CSRFToken" : item.dataset.csrf}
+            })
+            .then(response => response)
+            .then(result => {
+               buildquestlist()
+               highlightancestors(item)
+            })
+         }else if(item.className =="greenbox"){
+            console.log("nice")
+            fetch('/getquests', {
+               method:'POST',
+               body : JSON.stringify(data),
+               headers: {"X-CSRFToken" : item.dataset.csrf}
+            })
+            .then(response => response)
+            .then(result => {
+               buildquestlist()
+               highlightancestors(item)
+            })
+         }else{
+            fetch('/questroute', {
+               method: 'POST',
+               body : JSON.stringify(data),
+               headers: {"X-CSRFToken" : item.dataset.csrf}
+            })
+            .then(response => response.json())
+            .then(result => {
+               buildquestlist()
+               highlightancestors(item)
+            })
+         }
       });
    });
 
@@ -24,6 +51,44 @@ document.addEventListener('DOMContentLoaded', function(){
    //    })
    // }
 });
+
+function initialhighlight() {
+   fetch('/getquests')
+   .then(response => response.json())
+   .then(result => {
+      console.log(result)
+      for(x in result){
+         if (result[x].name){
+            doc = document.getElementById(result[x].name)
+            doc.className = "greenbox"
+         }else if(result[x].complete){
+            doc = document.getElementById(result[x].complete)
+            doc.className = "bluebox"
+         }
+         // if (doc.parentElement.parentElement.parentElement.children[0].id != "image"){
+         //    doc=doc.parentElement.parentElement.parentElement.children[0]
+         //    while(doc.id != "image"){
+         //       doc.className="bluebox"
+         //       doc=doc.parentElement.parentElement.parentElement.children[0]
+         //    }
+         // }
+      }
+   })
+}
+
+function removehighlight(element) {
+   initialhighlight()
+   // doc = document.getElementById(element.innerHTML)
+   // doc.classList.remove("greenbox")
+   // if (doc.parentElement.parentElement.parentElement.children[0].id != "image"){
+   //    doc=doc.parentElement.parentElement.parentElement.children[0]
+   //    while(doc.id != "image"){
+   //       doc.classList.remove("bluebox")
+   //       doc=doc.parentElement.parentElement.parentElement.children[0]
+   //    }
+   // }
+}
+
 
 function buildquestlist() {
    fetch('/questroute', {
@@ -51,7 +116,7 @@ function buildquestlist() {
          li.appendChild(text)
          document.getElementById("quest" + resoolt[x].quest).appendChild(li)
       }
-
+      //build Current Quest list
       a=document.getElementById("questlistul")
       a.innerHTML=""
       roosalt = result[0]
@@ -75,16 +140,19 @@ function buildquestlist() {
                   data = {
                      "node" : pElement.innerText
                   }
-                  csrf=document.getElementById('questlink')
+                  csrf=document.getElementById('Debut')
                   fetch('/questroute', {
                      method: 'PUT',
                      body: JSON.stringify(data),
                      headers: {"X-CSRFToken" : csrf.dataset.csrf}
                   })
-                  pElement.style.display = 'none';
+                  removehighlight()
+                  pElement.remove();
+
                }
             })
          }
+
       }
    })
 }
@@ -92,12 +160,13 @@ function buildquestlist() {
 function highlightancestors(item) {
    if(item.className =="greenbox" && item.parentElement.parentElement.parentElement.children[0].id =="image"){
       item.classList.remove("greenbox")
+      item.className = "bluebox"
    }else if(item.className == "greenbox"){
       item.classList.remove("greenbox")
       item.className = "bluebox"
-   }else if(item.className =="bluebox" && item.parentElement.parentElement.parentElement.children[0].id =="image"){
+   }else if(item.className =="bluebox" && item.nextElementSibling.children[0].children[0].className =="bluebox"){
       item.classList.remove("bluebox")
-      item.className = "greenbox"
+      item.classList.add("greenbox")
    }else{
       item.className="greenbox"
    }
@@ -107,10 +176,12 @@ function highlightancestors(item) {
       a=a.parentElement.parentElement.parentElement.children[0]
    }
    a=item.nextElementSibling
-   b=a.getElementsByTagName("button")
-   for(x of b){
-      x.classList.remove("bluebox")
-      x.classList.remove("greenbox")
+   if(a !== null){
+      b=a.getElementsByTagName("button")
+      for(x of b){
+         x.classList.remove("bluebox")
+         x.classList.remove("greenbox")
+      }
    }
 }
 

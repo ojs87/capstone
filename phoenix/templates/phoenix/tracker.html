@@ -14,7 +14,7 @@
 <ul class="praporroot listlines">
 {% recursetree prapor %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -27,7 +27,7 @@
 <ul class="therapistroot listlines">
 {% recursetree therapist %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -40,7 +40,7 @@
 <ul class="fenceroot listlines">
 {% recursetree fence %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -53,7 +53,7 @@
 <ul class="skierroot listlines">
 {% recursetree skier %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -66,7 +66,7 @@
 <ul class="peacekeeperroot listlines">
 {% recursetree peacekeeper %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -79,7 +79,7 @@
 <ul class="mechanicroot listlines">
 {% recursetree mechanic %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -92,7 +92,7 @@
 <ul class="ragmanroot listlines">
 {% recursetree ragman %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
@@ -105,7 +105,7 @@
 <ul class="jaegerroot listlines">
 {% recursetree jaeger %}
    <li>
-       <button id="questlink" data-csrf='{{csrf_token}}' class="{{node.questgiver}}">{{ node.name }}</button>
+       <button id="{{node.name}}" data-name='{{node.name}}' data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
        {% if not node.is_leaf_node %}
            <ul class="children">
                {{ children }}
