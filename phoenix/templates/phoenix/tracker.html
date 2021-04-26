@@ -4,135 +4,142 @@
 {% block body %}
 
 {% csrf_token %}
+{% if user.is_authenticated %}
 <div id="treestructurediv" class="container-fluid">
    <div class="row">
+         <p id="description">Click on a quest name to highlight a current quest, click again to complete the quest.<br>For "root" quests, click a third time to deselect.<br>The third column contains items you still need to collect in a raid to complete all quests</p>
+
+   </div>
+   <div class="row">
       <div class="col-lg-4 ulpadding">
+         <p id="image"><img src="{% static 'images/Prapor.png' %}" alt="Prapor" width="128" height="128"></p>
+         <ul class="praporroot listlines">
+         {% recursetree prapor %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Therapist.png' %}" alt="Therapist" width="128" height="128"></p>
+         <ul class="therapistroot listlines">
+         {% recursetree therapist %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Fence.png' %}" alt="Fence" width="128" height="128"></p>
+         <ul class="fenceroot listlines">
+         {% recursetree fence %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Skier.png' %}" alt="Skier" width="128" height="128"></p>
+         <ul class="skierroot listlines">
+         {% recursetree skier %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Peacekeeper.png' %}" alt="Peacekeeper" width="128" height="128"></p>
+         <ul class="peacekeeperroot listlines">
+         {% recursetree peacekeeper %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Mechanic.png' %}" alt="Mechanic" width="128" height="128"></p>
+         <ul class="mechanicroot listlines">
+         {% recursetree mechanic %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Ragman.png' %}" alt="Ragman" width="128" height="128"></p>
+         <ul class="ragmanroot listlines">
+         {% recursetree ragman %}
+            <li>
+                <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+         <p id="image"><img src="{% static 'images/Jaeger.png' %}" alt="Jaeger" width="128" height="128"></p>
+         <ul class="jaegerroot listlines">
+         {% recursetree jaeger %}
+            <li>
+                <button id="{{node.name}}" data-name='{{node.name}}' data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+         {% endrecursetree %}
+         </ul>
+      </div>
 
+      <div class="col-lg-4">
+         <div class="sticky-top">
+            <h3>Current quests</h3>
+            <ul id="questlistul">
+            </ul>
+         </div>
+      </div>
 
+      <div class="col-lg-4 ulpadding">
+         <h3>Items you need</h3>
+         <ul id="questsfir">
 
-<p id="image"><img src="{% static 'images/Prapor.png' %}" alt="Prapor" width="128" height="128"></p>
-<ul class="praporroot listlines">
-{% recursetree prapor %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Therapist.png' %}" alt="Therapist" width="128" height="128"></p>
-<ul class="therapistroot listlines">
-{% recursetree therapist %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Fence.png' %}" alt="Fence" width="128" height="128"></p>
-<ul class="fenceroot listlines">
-{% recursetree fence %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Skier.png' %}" alt="Skier" width="128" height="128"></p>
-<ul class="skierroot listlines">
-{% recursetree skier %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Peacekeeper.png' %}" alt="Peacekeeper" width="128" height="128"></p>
-<ul class="peacekeeperroot listlines">
-{% recursetree peacekeeper %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Mechanic.png' %}" alt="Mechanic" width="128" height="128"></p>
-<ul class="mechanicroot listlines">
-{% recursetree mechanic %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Ragman.png' %}" alt="Ragman" width="128" height="128"></p>
-<ul class="ragmanroot listlines">
-{% recursetree ragman %}
-   <li>
-       <button id="{{node.name}}" data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-<p id="image"><img src="{% static 'images/Jaeger.png' %}" alt="Jaeger" width="128" height="128"></p>
-<ul class="jaegerroot listlines">
-{% recursetree jaeger %}
-   <li>
-       <button id="{{node.name}}" data-name='{{node.name}}' data-csrf='{{csrf_token}}' class="{{node.questgiver}} questlink">{{ node.name }}</button>
-       {% if not node.is_leaf_node %}
-           <ul class="children">
-               {{ children }}
-           </ul>
-       {% endif %}
-   </li>
-{% endrecursetree %}
-</ul>
-</div>
-<div class="col-lg-4">
-   <div class="sticky-top">
+         </ul>
+      </div>
 
-   <h3>Current quests</h3>
-   <ul id="questlistul">
-      <li class="dropdown-item" id="questlistli" data-csrf='{{csrf_token}}'>Testing test<span class="closequest">&times;</span></li>
-   </ul>
    </div>
 </div>
-<div class="col-lg-4 ulpadding">
-   <h3>Items you need</h3>
-   <ul id="questsfir">
-
-   </ul>
+{% else %}
+<div id="container">
+   <p>Please Register or Log in to begin tracking your quests</p>
 </div>
-
-</div>
-</div>
+{% endif %}
 {% endblock %}
 {% block script%}
 <script>buildquestlist()</script>

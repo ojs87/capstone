@@ -74,8 +74,6 @@ def foundinraid(request):
         "items" : items,
     })
 
-def items(request):
-    return render(request, 'phoenix/items.html')
 
 def tracker(request):
     # a=TarkovQuestTester.objects.all()
@@ -302,28 +300,13 @@ def quests(request, quest):
     for leadto in x.leadsto:
         leadsto.update({TarkovQuestTester.objects.get(name=leadto["leadsto"]).name : TarkovQuestTester.objects.get(name=leadto["leadsto"]).slug})
 
-    # rewards=str(x.rewards)
-    # rewards1=rewards.replace("\\n", "<ul><li>", 1)
-    # rewards2=rewards1.replace("\\n", "<li>", 1)
-    # rewards3=rewards2.replace("Center Level 2", "Center Level 2</ul>", 1)
-    # rewards4=rewards3.replace("'", '"')
-    # rewards5 = json.loads(rewards4)
-    # x.rewards=rewards5
-    #
-    # objectives=str(x.objectives)
-    # if "(Optional)" in objectives:
-    #     objectives1=objectives.replace("\\n", "<ul><li>", 1)
-    #     objectives2=objectives1.replace("\\n", "</li><li>", 1)
-    # #     objectives3=objectives2.replace("'", '"')
-    # #     # objectives3 = json.loads(objectives2)
-    # #     x.objectives=objectives2
-
     return render(request, 'phoenix/quests.html',{
         "quest" : x,
         "prereqs" : prereqs,
         "leadsto" : leadsto,
     })
 
+#use json file from the webscraper to import data to TarkovFoundInRaid model. Only needs updated when the game updates the quests
 def importjson():
     with open('phoenix/csvjson(2).json', encoding='utf-8') as data_file:
         json_data = json.loads(data_file.read())
@@ -339,6 +322,12 @@ def getquests(request):
         user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
         user.completedquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
         return HttpResponse("nice")
+    elif request.method == 'PUT':
+        user=User.objects.get(username=request.user)
+        data=json.loads(request.body)
+        nodedata=data.get("node", "")
+        user.completedquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
+        return HttpResponse(201)
     else:
         user=User.objects.get(username=request.user)
         quests = user.onquests.all()
