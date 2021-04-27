@@ -113,6 +113,7 @@ def itemroute(request):
 
     return JsonResponse(quest2)
 
+# return quest information for the navbar Quests menu
 def questmenu(request):
     quests= TarkovQuestTester.objects.all()
     prapor=quests.filter(questgiver='Prapor').order_by("name")
@@ -184,6 +185,7 @@ def questmenu(request):
     return JsonResponse(questjson)
 
 def questroute(request):
+    #return information from the User model
     if request.method == 'GET':
         user=User.objects.get(username=request.user)
         jsonstuff = {}
@@ -193,28 +195,6 @@ def questroute(request):
             jsonstuff[y] = {"name" : x.name}
             y+=1
         y=0
-        # rootnodes = TarkovQuestStructure.objects.root_nodes()
-        # rootnodesuser = []
-        # y=0
-        # rootnodesmissing = []
-
-        # for p in user.onquests.all():
-        #     rootnodesuser.append(TarkovQuestStructure.objects.get(name=p).get_root())
-        # for p in rootnodes:
-        #     if p not in rootnodesuser:
-        #         rootnodesmissing.append(p)
-        # for i in rootnodesmissing:
-        #     for n in TarkovQuestStructure.objects.get(name=i).get_descendants(include_self=True):
-        #         firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=n.name).id)
-        #         for p in firitems:
-        #             firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
-        #             y+=1
-        # for x in user.onquests.all():
-        #     for i in TarkovQuestStructure.objects.get(name=x).get_descendants(include_self=True):
-        #         firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=i.name).id)
-        #         for p in firitems:
-        #             firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
-        #             y+=1
         for p in TarkovQuestTester.objects.filter(completed__isnull=True):
             firitems = TarkovFoundInRaid.objects.filter(quest=p.id)
             for i in firitems:
@@ -222,19 +202,19 @@ def questroute(request):
                 y+=1
         response = JsonResponse({0: jsonstuff, 1: firstuff})
         return response
-
+    #update the User model
     elif request.method =='PUT':
         data=json.loads(request.body)
         nodedata=data.get("node", "")
         user=User.objects.get(username=request.user)
         user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
         return HttpResponse(status=204)
-
+    #update the User model
     elif request.method == 'POST':
         data=json.loads(request.body)
         nodedata=data.get("node", "")
         user=User.objects.get(username=request.user)
-        # get ancestors and derscendants of the quest
+        # get ancestors and descendants of the quest
         nodeancestors = TarkovQuestStructure.objects.get(name=nodedata).get_ancestors()
         nodedescendants = TarkovQuestStructure.objects.get(name=nodedata).get_descendants()
         user.onquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
@@ -245,50 +225,9 @@ def questroute(request):
         for x in nodedescendants:
             user.onquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
             user.completedquests.remove(TarkovQuestTester.objects.get(name=x.name).id)
-        # jsonstuff = {}
-        # firstuff = {}
-        #
-        # y=0
-        # for x in user.onquests.all():
-        #     jsonstuff[y] = {"name" : x.name}
-        #     y+=1
-        # rootnodes = TarkovQuestStructure.objects.root_nodes()
-        # rootnodesuser = []
-        # y=0
-        # rootnodesmissing = []
-        # for p in user.onquests.all():
-        #     rootnodesuser.append(TarkovQuestStructure.objects.get(name=p).get_root())
-        # for p in rootnodes:
-        #     if p not in rootnodesuser:
-        #         rootnodesmissing.append(p)
-        # for i in rootnodesmissing:
-        #     for n in TarkovQuestStructure.objects.get(name=i).get_descendants(include_self=True):
-        #         firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=n.name).id)
-        #         for p in firitems:
-        #             firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
-        #             y+=1
-        # for i in TarkovQuestStructure.objects.get(name=x).get_descendants(include_self=True):
-        #     firitems = TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=i.name).id)
-        #     for p in firitems:
-        #         firstuff[y] = {"quest" : str(p.quest), "item" : str(p.name), "num" : str(p.amount)}
-        #         y+=1
+        return JsonResponse({0 : "ok"})
 
-        response = JsonResponse({0 : "nice"})
-        return response
-
-
-        # if user.onquests.filter(pk=TarkovQuestTester.objects.get(name=nodedata).id).exists():
-        #     user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
-        # else:
-        #     savequest=user.onquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
-        # firstuff=TarkovFoundInRaid.objects.filter(quest=TarkovQuestTester.objects.get(name=nodedata).id)
-        #
-        # for x in firstuff:
-        #     jsonstuff[y] = {"quest" : str(x.quest), "item" : str(x.name), "num" : str(x.amount)}
-        #     y+=1
-
-
-
+#return information for the Quest page
 def quests(request, quest):
     x=TarkovQuestTester.objects.get(slug=quest)
     prereqs= {}
@@ -314,6 +253,7 @@ def importjson():
         for quest_data in json_data:
             movie = TarkovFoundInRaid.create(**quest_data)
 
+#another route for updating User object and returning the quests the user is on
 def getquests(request):
     if request.method == 'POST':
         user=User.objects.get(username=request.user)
@@ -321,13 +261,13 @@ def getquests(request):
         nodedata=data.get("node", "")
         user.onquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
         user.completedquests.add(TarkovQuestTester.objects.get(name=nodedata).id)
-        return HttpResponse("nice")
+        return HttpResponse(status=201)
     elif request.method == 'PUT':
         user=User.objects.get(username=request.user)
         data=json.loads(request.body)
         nodedata=data.get("node", "")
         user.completedquests.remove(TarkovQuestTester.objects.get(name=nodedata).id)
-        return HttpResponse(201)
+        return HttpResponse(status=201)
     else:
         user=User.objects.get(username=request.user)
         quests = user.onquests.all()
