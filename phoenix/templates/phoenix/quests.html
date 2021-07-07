@@ -1,0 +1,46 @@
+{% extends 'phoenix/layout.html' %}
+{% load static %}
+{% block body %}
+<div id="container">
+   <h3>Quest Name</h3>
+   <p>{{quest.name}}</p>
+
+   <h3>Quest Giver</h3>
+   <p><img src="{% static 'images/'|add:quest.questgiver|add:'.png' %}" alt="Prapor" width="128" height="128"></p>
+   <h3>Objectives</h3>
+   <ul>
+      {% for x in quest.objectives %}
+         <li id="linebreak">{{x.objectives}}</li>
+      {% empty %}
+         <li>None</li>
+      {% endfor %}
+   </ul>
+
+   <h3>Prereqs</h3>
+   <ul>
+   {% for x, y in prereqs.items %}
+      <li><a href="{{y}}">{{x}}</a></li>
+   {% empty %}
+      <li>None</li>
+   {% endfor %}
+   </ul>
+
+   <h3>Leads to</h3>
+   <ul>
+   {% for x, y in leadsto.items %}
+      <li><a href="{{y}}">{{x}}</a></li>
+      {% empty %}
+      <li>None</li>
+   {% endfor %}
+   </ul>
+
+   <h3>Rewards</h3>
+   <ul>
+      {% for x in quest.rewards %}
+         <li id="linebreak">{{x.rewards |safe}}</li>
+      {% empty %}
+         <li>None</li>
+      {% endfor %}
+   </ul>
+</div>
+{% endblock %}

@@ -1,1 +1,256 @@
+body {
+   background-color:#404040;
+   color:#ffffff80;
+   margin-top:0;
+}
 
+
+.navbar {
+   background-color:#242424;
+   position:fixed;
+   z-index:1000;
+   width:100%;
+}
+
+a {
+   color:lightblue;
+}
+
+a:hover {
+   color:#4bbce1;
+}
+
+h3 {
+   padding-left:5px;
+   color: #ffffffbf;
+}
+
+table {
+   max-width:50%;
+   min-width:400px;
+}
+
+.table {
+   color:#ffffff80;
+}
+
+strong {
+   color:#ffffffbf
+}
+
+.dropdown-menu {
+   background-color: #242424;
+   color:#ffffff80
+}
+
+
+.dropdown-item {
+   color:#ffffff80;
+}
+
+
+.dropdown-item:hover {
+   background-color: #242424;
+   color:#ffffffbf;
+}
+
+.dropdown-submenu {
+  position: relative;
+  background-color: #242424;
+}
+
+.dropdown-item:focus {
+   background-color:#242424;
+   color:#ffffffbf;
+}
+.dropdown-submenu>a:after {
+  content: "\f0da";
+  float: right;
+  border: none;
+  font-family: 'FontAwesome';
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+  columns:2;
+}
+
+button {
+   background-color: #242424;
+   border: none;
+   color: #ffffff80;
+}
+
+button:hover {
+   color: #ffffffbf
+}
+
+ul.listlines li {
+   list-style-type:none;
+}
+
+ul.listlines li {
+    position:relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+
+}
+
+ul.listlines li:after {
+    /* bullets */
+    content: url("/static/images/littlecircle.png");
+    position: absolute;
+    left: -21px; /*adjust manually*/
+    top: 4px;
+}
+
+ul.listlines li:before {
+    /* lines */
+    content:"";
+    position: absolute;
+    left: -12px; /* adjust manually */
+    border-left: 1px solid black;
+    height: 100%;
+    width: 1px;
+}
+
+ul.listlines li:first-child:before {
+   /* first li's line */
+   top: 10px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+}
+
+ul.listlines li:last-child:before {
+    /* last li's line */
+   height: 9px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+}
+
+.bluebox {
+   background-color:blue
+}
+
+.greenbox {
+   background-color:green;
+}
+
+#linebreak {
+   white-space:pre-line;
+}
+
+#container {
+   padding:10px;
+   padding-top:60px;
+   margin-left:5px;
+}
+
+#description {
+   margin-left:10px;
+}
+
+
+.ulpadding ul {
+   padding-left:10px;
+}
+
+#quest {
+  display: inline-block;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1;
+  padding: .6em 1.4em .5em .8em;
+  width: auto;
+  max-width: 100%; /* useful when width is set to anything other than 100% */
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+  border-radius: .5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient.
+    for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+
+  */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+    linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+  background-position: right .7em top 50%, 0 0;
+  /* icon size, then gradient */
+  background-size: .65em auto, 100%;
+}
+
+#fixedblock {
+   position:fixed;
+   right:0;
+   top:0;
+   bottom:0;
+   width:20%;
+   border:3px solid white;
+   margin-top:56px;
+}
+
+#fixedblock h3 {
+   margin-left:30px;
+}
+
+#FIRStuff h3 {
+   margin-left:30px;
+}
+
+#FIRStuff {
+   position:fixed;
+   right:20%;
+   top:0;
+   bottom:0;
+   width:20%;
+   border:3px solid white;
+   border-right:none;
+   margin-top:56px;
+   overflow:scroll;
+}
+
+#treestructurediv{
+   padding-top:60px;
+}
+
+#FIRStuff li {
+   color: #ffffff80;
+}
+
+#questsfir li {
+   color: #ffffff80;
+   list-style-type: none;
+
+}
+
+.sticky-top {
+   top:60px;
+   z-index:500;
+}
+
+#questlistli {
+   display:block;
+   position:relative;
+   width:300px;
+   padding-left:10px;
+}
+
+#questlistul {
+   padding-left:0px;
+}
+
+.closequest {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   right: 0%;
+   padding: 0 16px 4px 16px;
+   transform: translate(0%, -50%);
+}
